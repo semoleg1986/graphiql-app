@@ -1,29 +1,22 @@
-import { signup } from '../../firebase';
-import { useRef } from 'react';
-import './HomePage.css';
+import { Redirect } from 'react-router-dom';
+import { useAuth } from '../hooks/use-auth';
+import { removeUser } from '../store/slices/userSlice';
+import { useAppDispatch } from '../hooks/redux-hooks';
 
-const Home = () => {
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+const HomePage = () => {
+  const dispatch = useAppDispatch();
 
-  async function handleSignup() {
-    if (emailRef.current && passwordRef.current) {
-      await signup(emailRef.current.value, passwordRef.current.value);
-    }
-  }
+  const { isAuth, email } = useAuth();
 
-  return (
-    <>
-      <div id="fields">
-        <h1>Welcome page</h1>
-        <input className="email" ref={emailRef} placeholder="Email" />
-        <input className="password" ref={passwordRef} type="password" placeholder="Password" />
-      </div>
-      <button id="signup" onClick={handleSignup}>
-        Sign up
-      </button>
-    </>
+  return isAuth ? (
+    <div>
+      <h1>Welcome</h1>
+
+      <button onClick={() => dispatch(removeUser())}>Log out from {email}</button>
+    </div>
+  ) : (
+    <Redirect to="/login" />
   );
 };
 
-export default Home;
+export default HomePage;
