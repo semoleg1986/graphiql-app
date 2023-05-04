@@ -23,11 +23,12 @@ body {
     border: none;
     border-radius: 20px;
     background-color: #f1f1f1;
+    text-indent: 20px;
   }
 
   .email::placeholder,
   .password::placeholder {
-    padding-left: 15px;
+    padding-left: 10px;
   }
   .email:focus,
   .password:focus {
