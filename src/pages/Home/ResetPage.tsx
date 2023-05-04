@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
   const [email, setEmail] = useState('');
@@ -21,7 +22,7 @@ const ResetPassword = () => {
       {isSent ? (
         <p>
           An email has been sent to your email address. Please follow the instructions to reset your
-          password.
+          password. <Link to="/login">Login</Link>
         </p>
       ) : (
         <form onSubmit={handleResetPassword}>
