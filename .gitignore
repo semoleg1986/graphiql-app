@@ -13,7 +13,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-node-modules/
+node_modules/
 dist/
 downloads/
 eggs/
