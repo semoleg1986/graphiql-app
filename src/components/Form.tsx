@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import './Form.css';
 
 interface FormProps {
   title: string;
@@ -10,20 +11,25 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
   const [pass, setPass] = useState('');
 
   return (
-    <div>
+    <div id="fields">
       <input
+        className="email"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="email"
+        placeholder="Email"
       />
       <input
+        className="password"
         type="password"
         value={pass}
         onChange={(e) => setPass(e.target.value)}
-        placeholder="password"
+        placeholder="Password"
       />
-      <button onClick={() => handleClick(email, pass)}>{title}</button>
+
+      <button id="signin" onClick={() => handleClick(email, pass)}>
+        {title}
+      </button>
     </div>
   );
 };
