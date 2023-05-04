@@ -6,7 +6,7 @@ import { useAppDispatch } from '../hooks/redux-hooks';
 
 const SignUp = () => {
   const dispatch = useAppDispatch();
-  const { push } = useNavigate();
+  const navigate = useNavigate();
 
   const handleRegister = (email: string, password: string) => {
     const auth = getAuth();
@@ -20,7 +20,7 @@ const SignUp = () => {
             token: user.refreshToken,
           })
         );
-        push('/');
+        navigate('/');
       })
       .catch(console.error);
   };
