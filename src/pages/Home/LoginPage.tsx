@@ -1,6 +1,5 @@
 import { Login } from '../../components/Login';
 import { Link } from 'react-router-dom';
-import ResetPassword from './ResetPage';
 
 const LoginPage = () => {
   return (
