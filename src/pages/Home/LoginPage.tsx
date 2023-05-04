@@ -1,5 +1,6 @@
 import { Login } from '../../components/Login';
 import { Link } from 'react-router-dom';
+import ResetPassword from './ResetPage';
 
 const LoginPage = () => {
   return (
@@ -7,7 +8,7 @@ const LoginPage = () => {
       <h1>Login</h1>
       <Login />
       <p>
-        Or <Link to="/register">register</Link>
+        <Link to="/reset-password">Reset password</Link> or <Link to="/register">register</Link>
       </p>
     </div>
   );
