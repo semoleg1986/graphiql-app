@@ -1,11 +1,7 @@
-import SearchBar from '../../components/SearchBar/SearchBar';
-import Cards from '../../components/Cards/Cards';
-
 const Home = () => {
   return (
     <>
-      <SearchBar />
-      <Cards />
+      <h1>Welcome page</h1>
     </>
   );
 };
