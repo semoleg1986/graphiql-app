@@ -27,7 +27,7 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
         placeholder="Password"
       />
 
-      <button id="signin" onClick={() => handleClick(email, pass)}>
+      <button id="button" onClick={() => handleClick(email, pass)}>
         {title}
       </button>
     </div>
