@@ -1,0 +1,73 @@
+.box-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.form-box {
+display: flex;
+flex-direction: column;
+margin-bottom: 20px;
+width: 100%;
+}
+
+.form-label {
+font-size: 16px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+
+.form-input {
+font-size: 16px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+width: 100%;
+}
+
+.form-radio-label {
+display: flex;
+align-items: center;
+margin-right: 20px;
+}
+
+.form-radio-input {
+margin-right: 5px;
+}
+
+.form-checkbox-label {
+display: flex;
+align-items: center;
+font-size: 16px;
+}
+
+.form-checkbox-input {
+margin-right: 5px;
+}
+
+.form-error {
+color: red;
+font-size: 14px;
+margin-top: 5px;
+}
+.form-add {
+    color: green;
+    font-size: 20px;
+    margin-top: 5 px;
+}
+.form-button {
+font-size: 16px;
+padding: 10px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.form-button:hover {
+background-color: #0062cc;
+}

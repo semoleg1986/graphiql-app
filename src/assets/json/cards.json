@@ -1,0 +1,82 @@
+{"products":[
+    {
+      "id":1,
+      "title":"iPhone 9",
+      "price":549,
+      "brand":"Apple",
+      "category":"smartphones",
+      "imageUrl": "https://picsum.photos/id/1/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    },
+    {
+      "id":2,
+      "title":"iPhone X",
+      "price":899,
+      "brand":"Apple",
+      "category":"smartphones",
+      "imageUrl": "https://picsum.photos/id/2/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    },
+    {
+      "id":3,
+      "title":"Samsung Universe 9",
+      "price":1249,
+      "brand":"Samsung",
+      "category":"smartphones",
+      "imageUrl": "https://picsum.photos/id/3/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    },
+    {
+      "id":4,
+      "title":"OPPOF19",
+      "price":280,
+      "brand":"OPPO",
+      "category":"smartphones",
+      "imageUrl": "https://picsum.photos/id/4/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    },
+    {
+      "id":5,
+      "title":"Huawei P30",
+      "price":499,
+      "brand":"Huawei",
+      "category":"smartphones",
+      "imageUrl": "https://picsum.photos/id/5/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    },
+    {
+      "id":6,
+      "title":"MacBook Pro",
+      "price":1749,
+      "brand":"Apple",
+      "category":"laptops",
+      "imageUrl": "https://picsum.photos/id/7/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    },
+    {
+      "id":7,
+      "title":"Samsung Galaxy Book",
+      "price":1499,
+      "brand":"Samsung",
+      "category":"laptops",
+      "imageUrl": "https://picsum.photos/id/7/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    },
+    {
+      "id":8,
+      "title":"Microsoft Surface Laptop 4",
+      "price":1499,
+      "brand":"Microsoft Surface",
+      "category":"laptops",
+      "imageUrl": "https://picsum.photos/id/8/300/200",
+      "rules": false,
+      "date": "07.12.2020"
+    }
+]} 
