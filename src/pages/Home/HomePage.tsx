@@ -1,5 +1,6 @@
 import { signup } from '../../firebase';
 import { useRef } from 'react';
+import './HomePage.css';
 
 const Home = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -15,10 +16,12 @@ const Home = () => {
     <>
       <div id="fields">
         <h1>Welcome page</h1>
-        <input ref={emailRef} placeholder="Email" />
-        <input ref={passwordRef} type="password" placeholder="Password" />
+        <input className="email" ref={emailRef} placeholder="Email" />
+        <input className="password" ref={passwordRef} type="password" placeholder="Password" />
       </div>
-      <button onClick={handleSignup}>Sign up</button>
+      <button id="signup" onClick={handleSignup}>
+        Sign up
+      </button>
     </>
   );
 };
