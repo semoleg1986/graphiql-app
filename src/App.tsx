@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home/HomePage';
 import LoginPage from './pages/Home/LoginPage';
 import RegisterPage from './pages/Home/RegisterPage';
@@ -6,7 +6,11 @@ import ResetPassword from './pages/Home/ResetPage';
 import About from './pages/About/AboutPage';
 import NotFoundPage from './pages/404/NotFoundPage';
 import Layout from './components/Layout';
-import React from 'react';
+
+const isAuthenticated = () => {
+  const user = localStorage.getItem('user');
+  return user !== null;
+};
 
 const App = () => {
   return (
@@ -17,7 +21,7 @@ const App = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="*" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="about" element={isAuthenticated() ? <About /> : <Navigate to="/login" />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

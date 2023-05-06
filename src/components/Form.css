@@ -2,7 +2,6 @@ body {
     background-color: #f8f8f8;
     font-family: 'Space Grotesk', sans-serif;
     text-align: center;
-    padding-top: 50px;
   }
   #fields {
     display: flex;
