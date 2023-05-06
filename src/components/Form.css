@@ -1,6 +1,6 @@
 body {
     background-color: #f8f8f8;
-    font-family: Arial, sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     text-align: center;
     padding-top: 50px;
   }
@@ -36,7 +36,7 @@ body {
     box-shadow: 0px 0px 5px #888888;
   }
   #button {
-    background-color: #2ecc71;
+    background-color: #13963c;
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
