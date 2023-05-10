@@ -48,14 +48,12 @@ const App = () => {
   return (
     <I18nextProvider i18n={i18next}>
       <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
-        <button onClick={toggleTheme}>Toggle Theme</button>
         <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
           EN
         </button>
         <button onClick={() => handleLanguageChange('ru')} disabled={currentLanguage === 'ru'}>
           RU
         </button>
-        <Toggle initialTheme={false} onChange={toggleTheme} />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
@@ -66,6 +64,7 @@ const App = () => {
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <Toggle initialTheme={false} onChange={toggleTheme} />
       </div>
     </I18nextProvider>
   );

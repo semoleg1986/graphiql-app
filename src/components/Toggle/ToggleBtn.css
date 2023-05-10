@@ -1,19 +1,36 @@
 .toggle-btn {
-    width: 80px;
-    height: 40px;
-    background-color: gray;
+    width: 50px;
+    height: 25px;
+    background-color: lightblue;
     border-radius: 30px;
-    padding: 5px;
+    padding: 2px;
   }
-  
-  .toggle-btn .inner-circle {
-    width: 40px;
-    height: 40px;
+.moon .moon-1{
+    visibility: hidden;
+    position:relative;
+    bottom: 23px;
+    left: 3px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50%;
+}
+.moon .moon-2{
+    position:relative;
+    left: 7px;
+    border: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+}
+.toggle-btn .inner-circle {
+    width: 25px;
+    height: 25px;
     background: #fff;
     border-radius: 50%;
   }
   
-  .toggle-btn.active {
-    background: #00acee;
+.toggle-btn.active {
+    background: gray;
   }
-  

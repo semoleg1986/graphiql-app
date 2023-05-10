@@ -2,11 +2,28 @@
     position: relative;
   }
   
-  .dark-theme .toggle-btn {
+.dark-theme .toggle-btn {
     background-color: #00acee;
-  }
+}
   
-  .dark-theme .toggle-btn .inner-circle {
-    margin-left: 40px;
-  }
-  
+.dark-theme .toggle-btn .inner-circle {
+    margin-left: 25px;
+}
+
+.toggle-btn .moon-2 {
+    margin-left: 25px;
+    background: yellow;
+    bottom: 41px;
+    right: 3px;
+}
+
+.dark-theme .toggle-btn .moon-2 {
+    margin-left: 0;
+    background: gray;
+    bottom: 43px;
+}
+
+.dark-theme .toggle-btn .moon-1 {
+    margin-left: 0;
+    visibility: visible;
+}
