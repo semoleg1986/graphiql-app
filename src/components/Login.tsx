@@ -1,10 +1,15 @@
 import { useNavigate } from 'react-router-dom';
+
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { Form } from './Form';
 import { setUser } from '../store/slices/userSlice';
 import { useAppDispatch } from '../hooks/redux-hooks';
+import i18next from 'i18next';
 
 const Login = () => {
+  const signin = i18next.t('login.signin');
+  const invaliduser = i18next.t('login.invaliduser');
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -22,10 +27,10 @@ const Login = () => {
         );
         navigate('/');
       })
-      .catch(() => alert('Invalid user!'));
+      .catch(() => alert({ invaliduser }));
   };
 
-  return <Form title="sign in" handleClick={handleLogin} />;
+  return <Form title={signin} handleClick={handleLogin} />;
 };
 
 export { Login };

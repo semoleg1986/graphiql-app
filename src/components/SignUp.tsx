@@ -3,8 +3,11 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Form } from './Form';
 import { setUser } from '../store/slices/userSlice';
 import { useAppDispatch } from '../hooks/redux-hooks';
+import i18next from 'i18next';
 
 const SignUp = () => {
+  const register = i18next.t('signup.register');
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -25,7 +28,7 @@ const SignUp = () => {
       .catch(console.error);
   };
 
-  return <Form title="register" handleClick={handleRegister} />;
+  return <Form title={register} handleClick={handleRegister} />;
 };
 
 export { SignUp };

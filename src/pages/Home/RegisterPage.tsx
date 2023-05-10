@@ -1,13 +1,18 @@
 import { SignUp } from '../../components/SignUp';
 import { Link } from 'react-router-dom';
+import i18next from 'i18next';
 
 const RegisterPage = () => {
+  const title = i18next.t('register.title');
+  const have = i18next.t('register.have');
+  const signin = i18next.t('register.signin');
+
   return (
     <div>
-      <h1>Register</h1>
+      <h1>{title}</h1>
       <SignUp />
       <p>
-        Already have an account? <Link to="/login">Sign in</Link>
+        {have} <Link to="/login">{signin}</Link>
       </p>
     </div>
   );
