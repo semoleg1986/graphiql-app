@@ -12,6 +12,7 @@ import { I18nextProvider } from 'react-i18next';
 import browserLanguageDetector from 'i18next-browser-languagedetector';
 import translationEn from '../src/locales/en.json';
 import translationRu from '../src/locales/ru.json';
+import ToggleDark from './components/ToggleDark';
 
 i18next.use(browserLanguageDetector).init({
   resources: {
@@ -30,8 +31,11 @@ i18next.use(browserLanguageDetector).init({
 });
 
 const App = () => {
+  const [darkTheme, setDarkTheme] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
-
+  const toggleTheme = () => {
+    setDarkTheme((prevTheme) => !prevTheme);
+  };
   useEffect(() => {
     setCurrentLanguage(i18next.language);
   }, []);
@@ -43,13 +47,15 @@ const App = () => {
 
   return (
     <I18nextProvider i18n={i18next}>
-      <div>
+      <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
+        <button onClick={toggleTheme}>Toggle Theme</button>
         <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
           EN
         </button>
         <button onClick={() => handleLanguageChange('ru')} disabled={currentLanguage === 'ru'}>
           RU
         </button>
+        <ToggleDark />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
