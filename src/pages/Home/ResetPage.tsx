@@ -10,6 +10,9 @@ const ResetPassword = () => {
   const placeholder = i18next.t('reset.placeholder');
   const sent = i18next.t('reset.sent');
   const login = i18next.t('reset.login');
+  const register = i18next.t('loginpage.register');
+  const enter = i18next.t('register.signin');
+  const or = i18next.t('loginpage.or');
 
   const [email, setEmail] = useState('');
   const [isSent, setIsSent] = useState(false);
@@ -26,27 +29,32 @@ const ResetPassword = () => {
   };
 
   return (
-    <div>
+    <div className="auth">
       {isSent ? (
         <p>
           {sent} <Link to="/login">{login}</Link>
         </p>
       ) : (
-        <form id="fields" onSubmit={handleResetPassword}>
-          <label htmlFor="email">{title}:</label>
-          <input
-            className="email"
-            type="email"
-            id="email"
-            placeholder={placeholder}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button id="button" type="submit">
-            {reset}
-          </button>
-        </form>
+        <>
+          <h1>{title}</h1>
+          <form id="fields" onSubmit={handleResetPassword}>
+            <input
+              className="email"
+              type="email"
+              id="email"
+              placeholder={placeholder}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button id="button" type="submit">
+              {reset}
+            </button>
+          </form>
+          <p>
+            <Link to="/register">{register}</Link> {or} <Link to="/login">{enter}</Link>
+          </p>
+        </>
       )}
     </div>
   );

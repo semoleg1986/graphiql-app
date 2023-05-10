@@ -9,11 +9,11 @@ const LoginPage = () => {
   const or = i18next.t('loginpage.or');
 
   return (
-    <div>
+    <div className="auth">
       <h1>{title}</h1>
       <Login />
       <p>
-        <Link to="/reset-password">{reset}</Link> {or} <Link to="/register">{register}</Link>
+        <Link to="/register">{register}</Link> {or} <Link to="/reset-password">{reset}</Link>
       </p>
     </div>
   );

@@ -8,7 +8,7 @@ const RegisterPage = () => {
   const signin = i18next.t('register.signin');
 
   return (
-    <div>
+    <div className="auth">
       <h1>{title}</h1>
       <SignUp />
       <p>
