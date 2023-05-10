@@ -12,7 +12,7 @@ import { I18nextProvider } from 'react-i18next';
 import browserLanguageDetector from 'i18next-browser-languagedetector';
 import translationEn from '../src/locales/en.json';
 import translationRu from '../src/locales/ru.json';
-import ToggleDark from './components/ToggleDark';
+import Toggle from './components/Toggle/Toggle';
 
 i18next.use(browserLanguageDetector).init({
   resources: {
@@ -55,7 +55,7 @@ const App = () => {
         <button onClick={() => handleLanguageChange('ru')} disabled={currentLanguage === 'ru'}>
           RU
         </button>
-        <ToggleDark />
+        <Toggle initialTheme={false} onChange={toggleTheme} />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />

@@ -1,0 +1,12 @@
+.toggle {
+    position: relative;
+  }
+  
+  .dark-theme .toggle-btn {
+    background-color: #00acee;
+  }
+  
+  .dark-theme .toggle-btn .inner-circle {
+    margin-left: 40px;
+  }
+  

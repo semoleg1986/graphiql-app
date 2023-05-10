@@ -1,26 +1,19 @@
-.toggle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(50%, 50%);
-}
-
 .toggle-btn {
     width: 80px;
     height: 40px;
     background-color: gray;
     border-radius: 30px;
     padding: 5px;
-}
-.toggle-btn>.inner-circle{
+  }
+  
+  .toggle-btn .inner-circle {
     width: 40px;
     height: 40px;
     background: #fff;
     border-radius: 50%;
-}
-.toggle-btn.active {
+  }
+  
+  .toggle-btn.active {
     background: #00acee;
-}
-.toggle-btn>.inner-circle{
-    margin-left: 40px;
-}
+  }
+  
