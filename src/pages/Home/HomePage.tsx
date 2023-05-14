@@ -3,6 +3,7 @@ import { useAuth } from '../../hooks/use-auth';
 import { removeUser } from '../../store/slices/userSlice';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import i18next from 'i18next';
+import GraphiQL from '../../components/Converter/Graphql';
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -19,6 +20,7 @@ const HomePage = () => {
       <button onClick={() => dispatch(removeUser())}>
         {logout} {email}
       </button>
+      <GraphiQL />
     </div>
   ) : (
     <Navigate to="/login" />
