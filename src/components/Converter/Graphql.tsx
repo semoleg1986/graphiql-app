@@ -11,13 +11,10 @@ const GraphiQL: React.FC = () => {
 
   const executeQuery = async () => {
     try {
-      // Здесь мы используем axios для выполнения запроса к серверу GraphQL
       const response = await ApiService.post('tv/popular', { query });
 
-      // Получаем результат из ответа сервера
       const data = response.data;
 
-      // Обновляем состояние с результатом запроса
       setResult(JSON.stringify(data, null, 2));
     } catch (error) {
       console.error('Ошибка при выполнении запроса:', error);
