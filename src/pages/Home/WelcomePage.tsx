@@ -9,7 +9,7 @@ const WelcomePage = () => {
   return isAuth ? (
     <div>
       Welcome
-      <Link to="/home">
+      <Link to="/">
         <button className="gomainpage">Go to main</button>
       </Link>
     </div>
