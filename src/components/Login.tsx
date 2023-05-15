@@ -17,6 +17,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         console.log(user);
+        localStorage.setItem('authUser', JSON.stringify(auth));
         dispatch(
           setUser({
             email: user.email,
