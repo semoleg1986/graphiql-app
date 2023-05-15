@@ -4,19 +4,16 @@
     right: 10px;
   }
   
-  .button-container button {
-    margin-left: 10px;
-    background-color: #81c784;
-    color: #ffffff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .button-container button:hover {
+  .button-container>a {
+    margin-right: 10px;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
     background-color: #c8e6c9;
+    color: white;
   }
-  
+
+    .button-container>a:hover {
+    text-decoration: none;
+    color: white;
+  }
   

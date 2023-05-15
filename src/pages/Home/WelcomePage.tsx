@@ -15,12 +15,8 @@ const WelcomePage = () => {
     </div>
   ) : (
     <div className="button-container">
-      <Link to="/login">
-        <button>Sign In</button>
-      </Link>
-      <Link to="/register">
-        <button>Sign Up</button>
-      </Link>
+      <Link to="/login">Sign In</Link>
+      <Link to="/register">Sign Up</Link>
     </div>
   );
 };
