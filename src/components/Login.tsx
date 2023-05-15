@@ -17,11 +17,6 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         console.log(user);
-        if (user.email) {
-          localStorage.setItem('email', user.email);
-        }
-        localStorage.setItem('refreshToken', user.refreshToken);
-        localStorage.setItem('uid', user.uid);
         dispatch(
           setUser({
             email: user.email,
