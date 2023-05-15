@@ -27,7 +27,7 @@ const Login = () => {
         );
         navigate('/welcome');
       })
-      .catch(() => alert({ invaliduser }));
+      .catch(() => alert('incorrect email or password'));
   };
 
   return <Form title={signin} handleClick={handleLogin} />;

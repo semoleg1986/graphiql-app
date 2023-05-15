@@ -1,6 +1,12 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import './Form.css';
 import i18next from 'i18next';
+
+interface FormData {
+  email: string;
+  password: string;
+}
 
 interface FormProps {
   title: string;
@@ -8,33 +14,51 @@ interface FormProps {
 }
 
 const Form: FC<FormProps> = ({ title, handleClick }) => {
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FormData>();
 
   const mail = i18next.t('form.mail');
   const password = i18next.t('form.password');
 
-  return (
-    <div id="fields">
-      <input
-        className="email"
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder={mail}
-      />
-      <input
-        className="password"
-        type="password"
-        value={pass}
-        onChange={(e) => setPass(e.target.value)}
-        placeholder={password}
-      />
+  const onSubmit = (data: FormData) => {
+    handleClick(data.email, data.password);
+  };
 
-      <button id="button" onClick={() => handleClick(email, pass)}>
+  return (
+    <form id="fields" onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        control={control}
+        name="email"
+        rules={{
+          required: 'Email is required',
+          pattern: { value: /^\S+@\S+$/i, message: 'Invalid email format' },
+        }}
+        render={({ field }) => (
+          <input className="email" type="email" {...field} placeholder={mail} />
+        )}
+      />
+      {errors.email && <p>{errors.email.message}</p>}
+
+      <Controller
+        control={control}
+        name="password"
+        rules={{
+          required: 'Password is required',
+          minLength: { value: 6, message: 'Password must be at least 6 characters long' },
+        }}
+        render={({ field }) => (
+          <input className="password" type="password" {...field} placeholder={password} />
+        )}
+      />
+      {errors.password && <p>{errors.password.message}</p>}
+
+      <button id="button" type="submit">
         {title}
       </button>
-    </div>
+    </form>
   );
 };
 
