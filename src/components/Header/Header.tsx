@@ -9,25 +9,25 @@ const Header = () => {
   const dispatch = useAppDispatch();
 
   const { isAuth } = useAuth();
-  const home = i18next.t('header.home');
-  const about = i18next.t('header.about');
-  const notfound = i18next.t('header.notfound');
+  // const home = i18next.t('header.home');
+  // const about = i18next.t('header.about');
+  // const notfound = i18next.t('header.notfound');
   // const logout = i18next.t('homepage.logout');
 
   return isAuth ? (
     <header>
       <h1>
         <Routes>
-          <Route path="/" element={home} />
-          <Route path="/about" element={about} />
-          <Route path="*" element={notfound} />
+          <Route path="/" element={i18next.t('home')} />
+          <Route path="/about" element={i18next.t('about')} />
+          <Route path="*" element={i18next.t('notfound')} />
         </Routes>
       </h1>
-      <NavLink to="/">{home}</NavLink>
-      <NavLink to="/about">{about}</NavLink>
+      <NavLink to="/">{i18next.t('home')}</NavLink>
+      <NavLink to="/about">{i18next.t('about')}</NavLink>
       <div className="button-container">
         <button className="signout" onClick={() => dispatch(removeUser())}>
-          Sign Out
+          {i18next.t('signout')}
         </button>
       </div>
     </header>
@@ -35,13 +35,13 @@ const Header = () => {
     <header>
       <h1>
         <Routes>
-          <Route path="/" element={home} />
-          <Route path="/about" element={about} />
-          <Route path="*" element={notfound} />
+          <Route path="/" element={i18next.t('home')} />
+          <Route path="/about" element={i18next.t('about')} />
+          <Route path="*" element={i18next.t('notfound')} />
         </Routes>
       </h1>
-      <NavLink to="/">{home}</NavLink>
-      <NavLink to="/about">{about}</NavLink>
+      <NavLink to="/">{i18next.t('home')}</NavLink>
+      <NavLink to="/about">{i18next.t('about')}</NavLink>
     </header>
   );
 };

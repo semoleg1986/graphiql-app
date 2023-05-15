@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ApiService from '../../services/ApiServ';
+import i18next from 'i18next';
 
 const GraphiQL: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -24,9 +25,9 @@ const GraphiQL: React.FC = () => {
   return (
     <div>
       <textarea value={query} onChange={handleQueryChange} rows={10} cols={50} />
-      <button onClick={executeQuery}>Выполнить запрос</button>
+      <button onClick={executeQuery}>{i18next.t('request')}</button>
       <div>
-        <h2>Результат:</h2>
+        <h2>{i18next.t('result')}:</h2>
         <pre>{result}</pre>
       </div>
     </div>

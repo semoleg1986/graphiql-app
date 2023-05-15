@@ -4,8 +4,8 @@ import { RootState } from '../../store';
 import i18next from 'i18next';
 
 const About = () => {
-  const title = i18next.t('about.title');
-  const text = i18next.t('about.text');
+  // const title = i18next.t('about.title');
+  // const text = i18next.t('about.text');
 
   const token = useSelector((state: RootState) => state.user.token);
 
@@ -14,8 +14,8 @@ const About = () => {
   }
   return (
     <div>
-      <h1>{title}</h1>
-      <p>{text}</p>
+      <h1>{i18next.t('about')}</h1>
+      <p>{i18next.t('about_text')}</p>
     </div>
   );
 };

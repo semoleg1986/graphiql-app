@@ -10,12 +10,12 @@ const HomePage = () => {
 
   const { isAuth } = useAuth();
 
-  const title = i18next.t('homepage.title');
+  // const title = i18next.t('homepage.title');
   // const logout = i18next.t('homepage.logout');
 
   return isAuth ? (
     <div>
-      <h1>{title}</h1>
+      <h1>{i18next.t('welcome')}</h1>
 
       {/* <button onClick={() => dispatch(removeUser())}>
         {logout} {email}

@@ -2,31 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/use-auth';
 import './Buttons.css';
+import i18next from 'i18next';
 
 const WelcomePage = () => {
   const { isAuth } = useAuth();
 
   return (
     <div>
-      <h1>Welcome</h1>
-      <p>Some additional text fot all users</p>
-      <p>
-        The welcome page should contain general information about the developers, project, and
-        course
-      </p>
+      <h1>{i18next.t('welcome')}</h1>
+      <p>{i18next.t('welcome_text1')}</p>
+      <p>{i18next.t('welcome_text2')}</p>
       {isAuth ? (
         <div className="button-container">
           <Link to="/">
-            <button className="gomainpage">Go to Main page</button>
+            <button className="gomainpage">{i18next.t('gotomain')}</button>
           </Link>
         </div>
       ) : (
         <div className="button-container">
           <Link to="/login">
-            <button className="signin">Sign In</button>
+            <button className="signin">{i18next.t('signin')}</button>
           </Link>
           <Link to="/register">
-            <button className="signup">Sign Up</button>
+            <button className="signup">{i18next.t('signup')}</button>
           </Link>
         </div>
       )}

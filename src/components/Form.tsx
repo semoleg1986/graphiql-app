@@ -20,8 +20,8 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
     formState: { errors },
   } = useForm<FormData>();
 
-  const mail = i18next.t('form.mail');
-  const password = i18next.t('form.password');
+  // const mail = i18next.t('form.mail');
+  // const password = i18next.t('form.password');
 
   const isPasswordValid = (value: string) => {
     return /[A-Z]/.test(value) && /[0-9]/.test(value) && /[!@#$%^&*]/.test(value);
@@ -41,7 +41,12 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
           pattern: { value: /^\S+@\S+$/i, message: 'Invalid email format' },
         }}
         render={({ field }) => (
-          <input className="email" type="email" {...field} placeholder={mail} />
+          <input
+            className="email"
+            type="email"
+            {...field}
+            placeholder={i18next.t('mail') ?? undefined}
+          />
         )}
       />
       {errors.email && <p>{errors.email.message}</p>}
@@ -57,7 +62,12 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
             'Password must contain at least one uppercase letter, one digit, and one special character',
         }}
         render={({ field }) => (
-          <input className="password" type="password" {...field} placeholder={password} />
+          <input
+            className="password"
+            type="password"
+            {...field}
+            placeholder={i18next.t('password') ?? undefined}
+          />
         )}
       />
       {errors.password && <p>{errors.password.message}</p>}

@@ -7,7 +7,7 @@ import { useAppDispatch } from '../hooks/redux-hooks';
 import i18next from 'i18next';
 
 const Login = () => {
-  const signin = i18next.t('login.signin');
+  // const signin = i18next.t('login.signin');
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Login = () => {
       .catch(() => alert('incorrect email or password'));
   };
 
-  return <Form title={signin} handleClick={handleLogin} />;
+  return <Form title={i18next.t('signin')} handleClick={handleLogin} />;
 };
 
 export { Login };
