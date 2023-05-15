@@ -13,6 +13,7 @@ import browserLanguageDetector from 'i18next-browser-languagedetector';
 import translationEn from '../src/locales/en.json';
 import translationRu from '../src/locales/ru.json';
 import Toggle from './components/Toggle/Toggle';
+import WelcomePage from './pages/Home/WelcomePage';
 
 i18next.use(browserLanguageDetector).init({
   resources: {
@@ -55,6 +56,7 @@ const App = () => {
           RU
         </button>
         <Routes>
+          <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/reset-password" element={<ResetPassword />} />

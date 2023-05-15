@@ -23,7 +23,7 @@ const HomePage = () => {
       <GraphiQL />
     </div>
   ) : (
-    <Navigate to="/login" />
+    <Navigate to="/welcome" />
   );
 };
 
