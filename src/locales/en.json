@@ -1,52 +1,27 @@
 {
-    "loginpage": {
-        "title": "Log in",
-        "reset": "Reset password",
-        "register": "Register",
-        "or": "or"
-    },
+    "login": "Log in",
+    "reset": "Reset password",
+    "or": "or",
+    "register": "Register",
+    "signup": "Sign up",
+    "signin": "Sign in",
+    "signout": "Sign Out",
+    "have": "Already have an account?",
+    "reset_title": "Email",
+    "placeholder": "Enter your email address",
+    "sent": "An email has been sent to your email address. Please follow the instructions to reset your password.",
+    "mail": "Email",
+    "password": "Password",
+    "welcome": "Welcome!",
+    "logout": "Log out from",
+    "about": "About Us",
+    "about_text": "There will be some text about us here.",
+    "home": "Home",
+    "notfound": "Not Found",
+    "welcome_text1": "Some additional text fot all users",
+    "welcome_text2": "The welcome page should contain general information about the developers, project, and course.",
+    "gotomain": "Go to Main page",
+    "result": "Result",
+    "request": "Request"
 
-    "login": {
-        "signin": "Sign in",
-        "invaliduser": "Invalid user!"
-    },
-
-    "register": {
-        "title": "Register",
-        "have": "Already have an account?",
-        "signin": "Sign in"
-    },
-
-    "reset": {
-        "title": "Email",
-        "placeholder": "Enter your email address",
-        "reset": "Reset password",
-        "sent": "An email has been sent to your email address. Please follow the instructions to reset your password."
-    },
-
-    "signup": {
-        "register": "Register"
-
-    },
-
-    "form": {
-        "mail": "Email",
-        "password": "Password"
-    },
-
-    "homepage": {
-        "title": "Welcome!",
-        "logout": "Log out from"
-    },
-
-    "about": {
-        "title": "About",
-        "text": "There will be some text about us here."
-    },
-
-    "header": {
-        "home": "Home",
-        "about": "About Us",
-        "notfound": "Not Found"
-    }
 }
