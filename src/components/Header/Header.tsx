@@ -8,11 +8,11 @@ import i18next from 'i18next';
 const Header = () => {
   const dispatch = useAppDispatch();
 
-  const { isAuth, email } = useAuth();
+  const { isAuth } = useAuth();
   const home = i18next.t('header.home');
   const about = i18next.t('header.about');
   const notfound = i18next.t('header.notfound');
-  const logout = i18next.t('homepage.logout');
+  // const logout = i18next.t('homepage.logout');
 
   return isAuth ? (
     <header>
@@ -25,9 +25,11 @@ const Header = () => {
       </h1>
       <NavLink to="/">{home}</NavLink>
       <NavLink to="/about">{about}</NavLink>
-      <button onClick={() => dispatch(removeUser())}>
-        {logout} {email}
-      </button>
+      <div className="button-container">
+        <button className="signout" onClick={() => dispatch(removeUser())}>
+          Sign Out
+        </button>
+      </div>
     </header>
   ) : (
     <header>
