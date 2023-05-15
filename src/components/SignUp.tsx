@@ -23,7 +23,7 @@ const SignUp = () => {
             token: user.refreshToken,
           })
         );
-        navigate('/');
+        navigate('/welcome');
       })
       .catch(console.error);
   };
