@@ -8,7 +8,6 @@ import i18next from 'i18next';
 
 const Login = () => {
   const signin = i18next.t('login.signin');
-  const invaliduser = i18next.t('login.invaliduser');
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

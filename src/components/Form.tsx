@@ -23,6 +23,10 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
   const mail = i18next.t('form.mail');
   const password = i18next.t('form.password');
 
+  const isPasswordValid = (value: string) => {
+    return /[A-Z]/.test(value) && /[0-9]/.test(value) && /[!@#$%^&*]/.test(value);
+  };
+
   const onSubmit = (data: FormData) => {
     handleClick(data.email, data.password);
   };
@@ -48,6 +52,9 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
         rules={{
           required: 'Password is required',
           minLength: { value: 6, message: 'Password must be at least 6 characters long' },
+          validate: (value) =>
+            isPasswordValid(value) ||
+            'Password must contain at least one uppercase letter, one digit, and one special character',
         }}
         render={({ field }) => (
           <input className="password" type="password" {...field} placeholder={password} />
