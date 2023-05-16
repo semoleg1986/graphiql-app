@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import i18next from 'i18next';
 
 const RegisterPage = () => {
-  // const title = i18next.t('register.title');
-  // const have = i18next.t('register.have');
-  // const signin = i18next.t('register.signin');
-
   return (
     <div className="auth">
       <h1>{i18next.t('register')}</h1>

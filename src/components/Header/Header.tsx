@@ -9,10 +9,6 @@ const Header = () => {
   const dispatch = useAppDispatch();
 
   const { isAuth } = useAuth();
-  // const home = i18next.t('header.home');
-  // const about = i18next.t('header.about');
-  // const notfound = i18next.t('header.notfound');
-  // const logout = i18next.t('homepage.logout');
 
   return isAuth ? (
     <header>

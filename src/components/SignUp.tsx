@@ -6,8 +6,6 @@ import { useAppDispatch } from '../hooks/redux-hooks';
 import i18next from 'i18next';
 
 const SignUp = () => {
-  // const register = i18next.t('signup.register');
-
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 

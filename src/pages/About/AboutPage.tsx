@@ -4,9 +4,6 @@ import { RootState } from '../../store';
 import i18next from 'i18next';
 
 const About = () => {
-  // const title = i18next.t('about.title');
-  // const text = i18next.t('about.text');
-
   const token = useSelector((state: RootState) => state.user.token);
 
   if (!token) {

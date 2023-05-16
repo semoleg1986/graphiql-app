@@ -25,10 +25,6 @@ i18next.use(browserLanguageDetector).init({
     },
   },
   fallbackLng: 'en',
-  // detection: {
-  //   order: ['localStorage', 'navigator'],
-  //   caches: ['localStorage'],
-  // },
 });
 
 const App = () => {

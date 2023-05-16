@@ -5,15 +5,6 @@ import '../../components/Form.css';
 import i18next from 'i18next';
 
 const ResetPassword = () => {
-  // const title = i18next.t('reset.title');
-  // const reset = i18next.t('reset.reset');
-  // const placeholder = i18next.t('reset.placeholder');
-  // const sent = i18next.t('reset.sent');
-  // const login = i18next.t('reset.login');
-  // const register = i18next.t('loginpage.register');
-  // const enter = i18next.t('register.signin');
-  // const or = i18next.t('loginpage.or');
-
   const [email, setEmail] = useState('');
   const [isSent, setIsSent] = useState(false);
 
