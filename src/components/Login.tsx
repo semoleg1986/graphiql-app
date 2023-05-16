@@ -24,7 +24,7 @@ const Login = () => {
             token: user.refreshToken,
           })
         );
-        navigate('/welcome');
+        navigate('/');
       })
       .catch(() => alert('incorrect email or password'));
   };

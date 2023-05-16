@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/HomePage';
-import LoginPage from './pages/Home/LoginPage';
-import RegisterPage from './pages/Home/RegisterPage';
-import ResetPassword from './pages/Home/ResetPage';
+import Main from './pages/Main/MainPage';
+import LoginPage from './pages/Main/LoginPage';
+import RegisterPage from './pages/Main/RegisterPage';
+import ResetPassword from './pages/Main/ResetPage';
 import About from './pages/About/AboutPage';
 import NotFoundPage from './pages/404/NotFoundPage';
 import Layout from './components/Layout';
@@ -13,7 +13,7 @@ import browserLanguageDetector from 'i18next-browser-languagedetector';
 import translationEn from '../src/locales/en.json';
 import translationRu from '../src/locales/ru.json';
 import Toggle from './components/Toggle/Toggle';
-import WelcomePage from './pages/Home/WelcomePage';
+import WelcomePage from './pages/Main/WelcomePage';
 
 i18next.use(browserLanguageDetector).init({
   resources: {
@@ -56,12 +56,12 @@ const App = () => {
           RU
         </button>
         <Routes>
-          <Route path="/welcome" element={<WelcomePage />} />
+          <Route index element={<WelcomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="*" element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route path="main" element={<Main />} />
             <Route path="about" element={<About />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />

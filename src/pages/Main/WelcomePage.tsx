@@ -14,7 +14,7 @@ const WelcomePage = () => {
       <p>{i18next.t('welcome_text2')}</p>
       {isAuth ? (
         <div className="button-container">
-          <Link to="/">
+          <Link to="/main">
             <button className="gomainpage">{i18next.t('gotomain')}</button>
           </Link>
         </div>

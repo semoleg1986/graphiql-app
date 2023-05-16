@@ -5,7 +5,7 @@ import { useAuth } from '../../hooks/use-auth';
 import i18next from 'i18next';
 import GraphiQL from '../../components/Converter/Graphql';
 
-const HomePage = () => {
+const MainPage = () => {
   // const dispatch = useAppDispatch();
 
   const { isAuth } = useAuth();
@@ -23,8 +23,8 @@ const HomePage = () => {
       <GraphiQL />
     </div>
   ) : (
-    <Navigate to="/welcome" />
+    <Navigate to="/" />
   );
 };
 
-export default HomePage;
+export default MainPage;
