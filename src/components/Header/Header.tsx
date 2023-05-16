@@ -18,12 +18,12 @@ const Header = () => {
     <header>
       <h1>
         <Routes>
-          <Route path="/" element={i18next.t('home')} />
+          <Route path="/main" element={i18next.t('main')} />
           <Route path="/about" element={i18next.t('about')} />
           <Route path="*" element={i18next.t('notfound')} />
         </Routes>
       </h1>
-      <NavLink to="/">{i18next.t('home')}</NavLink>
+      <NavLink to="/main">{i18next.t('main')}</NavLink>
       <NavLink to="/about">{i18next.t('about')}</NavLink>
       <div className="button-container">
         <button className="signout" onClick={() => dispatch(removeUser())}>
@@ -35,12 +35,12 @@ const Header = () => {
     <header>
       <h1>
         <Routes>
-          <Route path="/" element={i18next.t('home')} />
+          <Route path="/main" element={i18next.t('main')} />
           <Route path="/about" element={i18next.t('about')} />
           <Route path="*" element={i18next.t('notfound')} />
         </Routes>
       </h1>
-      <NavLink to="/">{i18next.t('home')}</NavLink>
+      <NavLink to="/main">{i18next.t('main')}</NavLink>
       <NavLink to="/about">{i18next.t('about')}</NavLink>
     </header>
   );

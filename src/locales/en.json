@@ -16,7 +16,7 @@
     "logout": "Log out from",
     "about": "About Us",
     "about_text": "There will be some text about us here.",
-    "home": "Home",
+    "main": "Main",
     "notfound": "Not Found",
     "welcome_text1": "Some additional text fot all users",
     "welcome_text2": "The welcome page should contain general information about the developers, project, and course.",
