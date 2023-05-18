@@ -1,30 +1,28 @@
 import { useNavigate } from 'react-router-dom';
-
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  setPersistence,
+  indexedDBLocalPersistence,
+} from 'firebase/auth';
 import { Form } from './Form';
-import { setUser } from '../store/slices/userSlice';
-import { useAppDispatch } from '../hooks/redux-hooks';
 import i18next from 'i18next';
 
 const Login = () => {
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleLogin = (email: string, password: string) => {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        console.log(user);
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.refreshToken,
+    setPersistence(auth, indexedDBLocalPersistence)
+      .then(() => {
+        signInWithEmailAndPassword(auth, email, password)
+          .then(({ user }) => {
+            console.log(user);
+            navigate('/');
           })
-        );
-        navigate('/');
+          .catch(() => alert('Incorrect email or password'));
       })
-      .catch(() => alert('incorrect email or password'));
+      .catch(() => alert('Failed to set authentication persistence'));
   };
 
   return <Form title={i18next.t('signin')} handleClick={handleLogin} />;

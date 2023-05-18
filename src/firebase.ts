@@ -12,8 +12,8 @@ const firebaseConfig = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
 
 export function signup(email: string, password: string): Promise<UserCredential> {
   return createUserWithEmailAndPassword(auth, email, password);
