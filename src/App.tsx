@@ -63,9 +63,7 @@ const App = () => {
               <Route path="main" element={<Main />} />
               <Route path="about" element={<About />} />
             </Route>
-          ) : (
-            <Route path="*" element={<Navigate to="/" />} />
-          )}
+          ) : null}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Toggle initialTheme={false} onChange={toggleTheme} />
