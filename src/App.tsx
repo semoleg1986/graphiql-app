@@ -58,17 +58,23 @@ const App = () => {
         </button>
         <Routes>
           <Route index element={<WelcomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
           {isAuth ? (
-            <Route path="*" element={<Layout />}>
-              <Route path="main" element={<Main />} />
-              <Route path="about" element={<About />} />
-            </Route>
+            <>
+              <Route path="/login" element={<Navigate to="/main" />} />
+              <Route path="/register" element={<Navigate to="/main" />} />
+              <Route path="*" element={<Layout />}>
+                <Route path="main" element={<Main />} />
+                <Route path="about" element={<About />} />
+              </Route>
+            </>
           ) : (
-            <Route path="*" element={<Navigate to="/" />} />
+            <>
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </>
           )}
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Toggle initialTheme={false} onChange={toggleTheme} />
