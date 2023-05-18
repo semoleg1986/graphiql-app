@@ -18,7 +18,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
           .then(({ user }) => {
             console.log(user);
-            navigate('/');
+            navigate('/main');
           })
           .catch(() => alert('Incorrect email or password'));
       })
