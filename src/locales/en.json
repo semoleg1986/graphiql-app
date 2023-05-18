@@ -22,6 +22,11 @@
     "welcome_text2": "The welcome page should contain general information about the developers, project, and course.",
     "gotomain": "Go to Main page",
     "result": "Result",
-    "request": "Request"
+    "request": "Request",
+    "email_required": "Email is required",
+    "invalid_email": "Invalid email format",
+    "password_required": "Password is required",
+    "password_message": "Password must be at least 6 characters long",
+    "password_contain":"Password must contain at least one ABC, one 123, and one &^%$#"
 
 }
