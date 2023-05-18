@@ -14,11 +14,9 @@ export function useAuth() {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setIsAuth(true);
-        // Сохраняем состояние аутентификации в localStorage
         localStorage.setItem('isAuth', 'true');
       } else {
         setIsAuth(false);
-        // Удаляем сохраненное состояние аутентификации из localStorage
         localStorage.removeItem('isAuth');
       }
     });
