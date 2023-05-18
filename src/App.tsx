@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Main from './pages/Main/MainPage';
 import LoginPage from './pages/Main/LoginPage';
 import RegisterPage from './pages/Main/RegisterPage';
@@ -14,6 +14,7 @@ import translationEn from '../src/locales/en.json';
 import translationRu from '../src/locales/ru.json';
 import Toggle from './components/Toggle/Toggle';
 import WelcomePage from './pages/Main/WelcomePage';
+import { useAuth } from './hooks/use-auth';
 
 i18next.use(browserLanguageDetector).init({
   resources: {
@@ -28,6 +29,7 @@ i18next.use(browserLanguageDetector).init({
 });
 
 const App = () => {
+  const { isAuth } = useAuth();
   const [darkTheme, setDarkTheme] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
   const toggleTheme = () => {
@@ -56,10 +58,14 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="*" element={<Layout />}>
-            <Route path="main" element={<Main />} />
-            <Route path="about" element={<About />} />
-          </Route>
+          {isAuth ? (
+            <Route path="*" element={<Layout />}>
+              <Route path="main" element={<Main />} />
+              <Route path="about" element={<About />} />
+            </Route>
+          ) : (
+            <Route path="*" element={<Navigate to="/" />} />
+          )}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Toggle initialTheme={false} onChange={toggleTheme} />
