@@ -9,8 +9,10 @@ export function useAuth() {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setIsAuth(true);
+        localStorage.setItem('isAuth', 'true');
       } else {
         setIsAuth(false);
+        localStorage.removeItem('isAuth');
       }
       setIsLoading(false);
     });
