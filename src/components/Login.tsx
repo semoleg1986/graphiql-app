@@ -3,7 +3,7 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   setPersistence,
-  indexedDBLocalPersistence,
+  browserLocalPersistence,
 } from 'firebase/auth';
 import { Form } from './Form';
 import i18next from 'i18next';
@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLogin = (email: string, password: string) => {
     const auth = getAuth();
-    setPersistence(auth, indexedDBLocalPersistence)
+    setPersistence(auth, browserLocalPersistence)
       .then(() => {
         signInWithEmailAndPassword(auth, email, password)
           .then(({ user }) => {
