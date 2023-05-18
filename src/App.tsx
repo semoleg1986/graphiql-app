@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Main from './pages/Main/MainPage';
 import LoginPage from './pages/Main/LoginPage';
 import RegisterPage from './pages/Main/RegisterPage';
@@ -29,7 +30,7 @@ i18next.use(browserLanguageDetector).init({
 });
 
 const App = () => {
-  const { isAuth } = useAuth();
+  const { isAuth, isLoading } = useAuth();
   const [darkTheme, setDarkTheme] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
   const toggleTheme = () => {
@@ -43,7 +44,9 @@ const App = () => {
     i18next.changeLanguage(lang);
     setCurrentLanguage(lang);
   };
-
+  if (isLoading) {
+    return <div>Loading...</div>; // Отображение загрузочного индикатора или другой загрузочной составляющей
+  }
   return (
     <I18nextProvider i18n={i18next}>
       <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
@@ -63,7 +66,9 @@ const App = () => {
               <Route path="main" element={<Main />} />
               <Route path="about" element={<About />} />
             </Route>
-          ) : null}
+          ) : (
+            <Route path="*" element={<Navigate to="/" />} />
+          )}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Toggle initialTheme={false} onChange={toggleTheme} />
