@@ -46,7 +46,7 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
         type="password"
         {...register('password', {
           required: i18next.t('password_required') ?? undefined,
-          minLength: { value: 6, message: i18next.t('password_message') },
+          minLength: { value: 8, message: i18next.t('password_message') },
           validate: (value) =>
             (isPasswordValid(value) || i18next.t('password_contain')) ?? undefined,
         })}
