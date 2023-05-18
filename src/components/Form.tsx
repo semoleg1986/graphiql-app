@@ -35,11 +35,11 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
         type="email"
         {...register('email', {
           required: 'Email is required',
-          pattern: { value: /^\S+@\S+$/i, message: 'Invalid email format' },
+          pattern: { value: /^\S+@\S+\.\S+$/i, message: 'Invalid email format' },
         })}
         placeholder={i18next.t('mail') ?? undefined}
       />
-      {errors.email && <p>{errors.email.message}</p>}
+      {errors.email && <p className="error">{errors.email.message}</p>}
 
       <input
         className="password"
@@ -49,11 +49,11 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
           minLength: { value: 6, message: 'Password must be at least 6 characters long' },
           validate: (value) =>
             isPasswordValid(value) ||
-            'Password must contain at least one uppercase letter, one digit, and one special character',
+            'Password must contain at least one ABC, one 123, and one &^%$#',
         })}
         placeholder={i18next.t('password') ?? undefined}
       />
-      {errors.password && <p>{errors.password.message}</p>}
+      {errors.password && <p className="error">{errors.password.message}</p>}
 
       <button id="button" type="submit">
         {title}
