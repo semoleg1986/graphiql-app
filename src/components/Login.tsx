@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   getAuth,
@@ -5,11 +6,25 @@ import {
   setPersistence,
   browserLocalPersistence,
 } from 'firebase/auth';
-import { Form } from './Form';
+import { Form, FormProps } from './Form';
 import i18next from 'i18next';
 
-const Login = () => {
+interface WarningMessageProps {
+  message: string;
+  onClose: () => void;
+}
+
+const WarningMessage: React.FC<WarningMessageProps> = ({ message, onClose }) => (
+  <div className="warning-message">
+    <p>{message}</p>
+    <button onClick={onClose}>X</button>
+  </div>
+);
+
+const Login: React.FC = () => {
   const navigate = useNavigate();
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningMessage, setWarningMessage] = useState('');
 
   const handleLogin = (email: string, password: string) => {
     const auth = getAuth();
@@ -20,12 +35,33 @@ const Login = () => {
             console.log(user);
             navigate('/main');
           })
-          .catch(() => alert('Incorrect email or password'));
+          .catch(() => {
+            setWarningMessage('Incorrect email or password');
+            setShowWarning(true);
+          });
       })
-      .catch(() => alert('Failed to set authentication persistence'));
+      .catch(() => {
+        setWarningMessage('Failed to set authentication persistence');
+        setShowWarning(true);
+      });
   };
 
-  return <Form title={i18next.t('signin')} handleClick={handleLogin} />;
+  const closeWarning = () => {
+    setShowWarning(false);
+    setWarningMessage('');
+  };
+
+  const formProps: FormProps = {
+    title: i18next.t('signin'),
+    handleClick: handleLogin,
+  };
+
+  return (
+    <>
+      {showWarning && <WarningMessage message={warningMessage} onClose={closeWarning} />}
+      <Form {...formProps} />
+    </>
+  );
 };
 
 export { Login };

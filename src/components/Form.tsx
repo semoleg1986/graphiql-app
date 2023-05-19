@@ -8,7 +8,7 @@ interface FormData {
   password: string;
 }
 
-interface FormProps {
+export interface FormProps {
   title: string;
   handleClick: (email: string, pass: string) => void;
 }
