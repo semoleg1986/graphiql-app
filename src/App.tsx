@@ -76,7 +76,10 @@ const App = () => {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/reset-password" element={<ResetPassword />} />
-              <Route path="*" element={<Navigate to="/" />} />
+              <Route path="*" element={<Layout />}>
+                <Route path="main" element={<Navigate to="/" />} />
+                <Route path="about" element={<Navigate to="/" />} />
+              </Route>
             </>
           )}
 
