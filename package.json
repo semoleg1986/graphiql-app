@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@uiw/react-codemirror": "^4.20.2",
     "axios": "^1.4.0",
+    "cm6-graphql": "^0.0.7",
     "firebase": "^9.21.0",
     "graphql": "^16.6.0",
     "graphql-request": "^6.0.0",

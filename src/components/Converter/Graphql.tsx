@@ -67,7 +67,7 @@ const GraphiQL = () => {
       />
       <button onClick={executeQuery}>Run Query</button>
       <h2>Result: </h2>
-      <pre>{result}</pre>
+      <CodeMirror value={result} height="400px" width="100%" />
     </div>
   );
 };
