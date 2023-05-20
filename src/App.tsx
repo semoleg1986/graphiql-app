@@ -16,6 +16,7 @@ import translationRu from '../src/locales/ru.json';
 import Toggle from './components/Toggle/Toggle';
 import WelcomePage from './pages/Main/WelcomePage';
 import { useAuth } from './hooks/use-auth';
+import Footer from './components/Footer/Footer';
 
 i18next.use(browserLanguageDetector).init({
   resources: {
@@ -80,6 +81,7 @@ const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Toggle initialTheme={false} onChange={toggleTheme} />
+        <Footer />
       </div>
     </I18nextProvider>
   );
