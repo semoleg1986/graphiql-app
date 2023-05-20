@@ -1,13 +1,16 @@
 .light-theme {
     background-color: white;
+    height: 100vh;
     color: #333333;
 }
   
 .dark-theme {
     background-color: #333333;
+    height: 100vh;
     color: white;
 }
-  
+
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +20,6 @@ body {
     background-color: white;
     color: #333333;
 }
-
 body .warning-message {
     position: fixed;
     top: 0;
@@ -145,6 +147,7 @@ a:hover {
   }
 
   @media (max-width: 662px) {
+
     .footer-content {
       flex-wrap: wrap;
       justify-content: center;

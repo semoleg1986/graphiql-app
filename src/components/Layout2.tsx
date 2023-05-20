@@ -1,11 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import Header from './Header/Header';
 import Footer from './Footer/Footer';
-
-const Layout = () => {
+const Layout2 = () => {
   return (
     <div className="wrapped">
-      <Header />
       <main className="container">
         <Outlet />
       </main>
@@ -14,4 +11,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Layout2;
