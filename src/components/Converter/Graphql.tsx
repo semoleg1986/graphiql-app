@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { buildClientSchema, getIntrospectionQuery } from 'graphql';
+import CodeMirror from '@uiw/react-codemirror';
+import { GraphQLSchema } from 'graphql/type';
+import { graphql } from 'cm6-graphql';
 
 const endpoint = 'https://swapi-graphql.netlify.app/.netlify/functions/index';
 
 const GraphiQL = () => {
-  const [schema, setSchema] = useState<any>(null); // Update the type to `any`
+  const [schema, setSchema] = useState<GraphQLSchema | null>(null); // Update the type to `any`
   const [query, setQuery] = useState('');
   const [result, setResult] = useState('');
 
@@ -17,7 +20,7 @@ const GraphiQL = () => {
           body: JSON.stringify({ query: getIntrospectionQuery() }),
         });
         const result = await response.json();
-        console.log(result)
+        console.log(result);
 
         if (result.errors) {
           throw new Error(result.errors[0].message);
@@ -32,7 +35,9 @@ const GraphiQL = () => {
 
     fetchSchema();
   }, []);
-
+  const onChangeValue = React.useCallback((value: string) => {
+    setQuery(value);
+  }, []);
   const executeQuery = async () => {
     try {
       const response = await fetch(endpoint, {
@@ -53,7 +58,13 @@ const GraphiQL = () => {
 
   return (
     <div>
-      <textarea value={query} onChange={(e) => setQuery(e.target.value)} />
+      <CodeMirror
+        value={query}
+        height="200px"
+        width="100%"
+        extensions={[graphql(schema)]}
+        onChange={onChangeValue}
+      />
       <button onClick={executeQuery}>Run Query</button>
       <h2>Result: </h2>
       <pre>{result}</pre>
