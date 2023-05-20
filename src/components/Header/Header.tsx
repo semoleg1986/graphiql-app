@@ -35,7 +35,7 @@ const Header = () => {
       <NavLink to="/main">{i18next.t('main')}</NavLink>
       <NavLink to="/about">{i18next.t('about')}</NavLink>
       {isAuth && (
-        <div className="button-container">
+        <div>
           <button className="signout" onClick={handleSignOut}>
             {i18next.t('signout')}
           </button>
