@@ -1,5 +1,6 @@
 .toggle {
-    position: relative;
+    position: fixed;
+    bottom: 60px;
   }
   
 .dark-theme .toggle-btn {
