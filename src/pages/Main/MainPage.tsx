@@ -1,11 +1,11 @@
 import i18next from 'i18next';
-import SchemaComponent from '../../components/Converter/SchemaComponent';
+import GraphiQL from '../../components/Converter/Graphql';
 
 const MainPage = () => {
   return (
     <div>
       <h1>{i18next.t('welcome')}</h1>
-      <SchemaComponent />
+      <GraphiQL />
     </div>
   );
 };
