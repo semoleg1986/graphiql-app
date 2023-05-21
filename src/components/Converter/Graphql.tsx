@@ -3,6 +3,7 @@ import { buildClientSchema, getIntrospectionQuery } from 'graphql';
 import CodeMirror from '@uiw/react-codemirror';
 import { GraphQLSchema } from 'graphql/type';
 import { graphql } from 'cm6-graphql';
+import './Graphql.css';
 
 const endpoint = 'https://swapi-graphql.netlify.app/.netlify/functions/index';
 
@@ -57,17 +58,19 @@ const GraphiQL = () => {
   }
 
   return (
-    <div>
+    <div className="query-container">
       <CodeMirror
+        className="query-editor"
         value={query}
-        height="200px"
+        height="500px"
         width="100%"
         extensions={[graphql(schema)]}
         onChange={onChangeValue}
       />
-      <button onClick={executeQuery}>Run Query</button>
-      <h2>Result: </h2>
-      <CodeMirror value={result} height="400px" width="100%" />
+      <button className="run-button" onClick={executeQuery}>
+        Run
+      </button>
+      <CodeMirror className="response-field" value={result} height="500px" width="100%" />
     </div>
   );
 };

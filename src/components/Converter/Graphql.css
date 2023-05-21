@@ -1,0 +1,37 @@
+.query-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    column-gap: normal;
+    border: 1px solid   rgb(144, 142, 142);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.query-editor {
+    width: 30vw;
+    margin: 5px;
+}
+
+.query-docs {
+    width: 30vw;
+    margin: 5px;
+}
+
+
+.response-field {
+    width:60vw;
+    margin: 5px;
+}
+
+.run-button {
+    height: 40px; 
+    background-color: #ffcccc;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
