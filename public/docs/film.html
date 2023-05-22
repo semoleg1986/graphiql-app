@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <a href="#" onclick="goBack()">Back</a>
+        <script>
+        function goBack() {
+          window.history.back(); // переход на предыдущую страницу
+        }
+        </script>
+    </p>
+    <h2>Film</h2>
+    <p>A single film.</p>
+    <ul>Fields
+        <li>
+            <a href="title.html">title</a>: <a href="string.html">String</a>
+            <p>The title of this film.</p>
+        </li>
+        <li>
+            <a href="episodeid.html">episodeID</a>: <a href="int.html">Int</a>
+            <p>The episode number of this film.</p>
+        </li>
+        <li>
+            <a href="openingcrawl.html">openingCrawl</a>: <a href="string.html">String</a>
+            <p>The opening paragraphs at the beginning of this film.</p>
+        </li>
+        <li>
+            <a href="director.html">director</a>: <a href="string.html">String</a>
+            <p>The name of the director of this film.</p>
+        </li>
+        <li>
+            <a href="producers.html">producers</a>: <a href="string.html">[String]</a>
+            <p>The name(s) of the producer(s) of this film.</p>
+        </li>
+        <li>
+            <a href="releasedate.html">releaseDate</a>: <a href="string.html">String</a>
+            <p>The ISO 8601 date format of film release at original creator country.</p>
+        </li>
+        <li>
+            <a href="speciesconnection.html">speciesConnection</a>( 
+                <ul>
+                    <li>after:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>first:
+                        <a href="int.html">Int</a>
+                    </li>
+                    <li>before:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>last:
+                        <a href="int.html">Int</a>
+                    </li>
+                    ): <a href="filmscpeciesConnection.html">FilmsSpeciesConnection<a>
+                    </li>
+                </ul>
+        </li>
+        <li>
+            <a href="starshipconnection.html">starshipConnection</a>( 
+                <ul>
+                    <li>after:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>first:
+                        <a href="int.html">Int</a>
+                    </li>
+                    <li>before:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>last:
+                        <a href="int.html">Int</a>
+                    </li>
+                    ): <a href="filmstartshipconnection.html">FilmStartshipConnection<a>
+                    </li>
+                    <span></span>
+                </ul>
+        </li>
+        <li>
+            <a href="vehicleconnection.html">vehicleConnection</a>( 
+                <ul>
+                    <li>after:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>first:
+                        <a href="int.html">Int</a>
+                    </li>
+                    <li>before:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>last:
+                        <a href="int.html">Int</a>
+                    </li>
+                    ): <a href="filmvehicleconnection.html">FilmVehicleConnection<a>
+                    </li>
+                </ul>
+        </li>
+        <li>
+            <a href="characterconnection.html">characterConnection</a>( 
+                <ul>
+                    <li>after:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>first:
+                        <a href="int.html">Int</a>
+                    </li>
+                    <li>before:
+                        <a href="string.html">String</a>
+                    </li>
+                    <li>last:
+                        <a href="int.html">Int</a>
+                    </li>
+                    ): <a href="filmcharacterconnection.html">FilmCharacterConnection<a>
+                    </li>
+                </ul>
+        </li>
+        <li>
+            <a href="created.html">created</a>: <a href="string.html">String</a>
+            <p>The ISO 8601 date format of the time that this resource was created.</p>
+        </li>
+        <li>
+            <a href="edited.html">edited</a>: <a href="string.html">String</a>
+            <p>The ISO 8601 date format of the time that this resource was edited.</p>
+        </li>
+        <li>
+            <a href="id.html">id</a>: <a href="id!.html">ID</a>!
+            <p>The ID of an object</p>
+        </li>
+    </ul>
+
+</body>
+</html>
