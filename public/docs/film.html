@@ -14,12 +14,14 @@
         a {
             color: orange;
             text-decoration: none;
+            cursor: pointer;
         }
 
         a:hover {
             text-decoration: underline;
             color: darkblue;
-        }
+            }
+
     </style>
 </head>
 <body>
@@ -35,138 +37,98 @@
     <p>A single film.</p>
     <p>Fields</p>
     <ul>
-        <li>
+        <li class="list-item">
             title: <a href="string.html">String</a>
             <p>The title of this film.</p>
         </li>
-        <li>
+        <li class="list-item">
             episodeID: <a href="int.html">Int</a>
             <p>The episode number of this film.</p>
         </li>
-        <li>
+        <li class="list-item">
             openingCrawl: <a href="string.html">String</a>
             <p>The opening paragraphs at the beginning of this film.</p>
         </li>
-        <li>
+        <li class="list-item">
            director: <a href="string.html">String</a>
             <p>The name of the director of this film.</p>
         </li>
-        <li>
+        <li class="list-item">
             producers: <a href="string.html">[String]</a>
             <p>The name(s) of the producer(s) of this film.</p>
         </li>
-        <li>
+        <li class="list-item">
             releaseDate: <a href="string.html">String</a>
             <p>The ISO 8601 date format of film release at original creator country.</p>
         </li>
-        <li>
-            speciesConnection( 
+        
+        <li class="list-item">
+            <p>speciesConnection(</p>
                 <ul>
-                    <li>after:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>first:
-                        <a href="int.html">Int</a>
-                    </li>
-                    <li>before:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>last:
-                        <a href="int.html">Int</a>
-                    </li>
-                    ): <a href="filmspeciesconnection.html">FilmsSpeciesConnection<a>
-                    </li>
+                    <li class="list-item">after: <a href="string.html">String</a></li>
+                    <li class="list-item">first: <a href="int.html">Int</a></li>
+                    <li class="list-item">before: <a href="string.html">String</a></li>
+                    <li class="list-item">last: <a href="int.html">Int</a></li>
                 </ul>
-        </li>
-        <li>
-            starshipConnection( 
-                <ul>
-                    <li>after:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>first:
-                        <a href="int.html">Int</a>
-                    </li>
-                    <li>before:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>last:
-                        <a href="int.html">Int</a>
-                    </li>
-                    ): <a href="filmstarshipsconnection.html">FilmStartshipsConnection<a>
-                    </li>
-                    <span></span>
-                </ul>
-        </li>
-        <li>
-            vehicleConnection( 
-                <ul>
-                    <li>after:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>first:
-                        <a href="int.html">Int</a>
-                    </li>
-                    <li>before:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>last:
-                        <a href="int.html">Int</a>
-                    </li>
-                    ): <a href="filmvehiclesconnection.html">FilmVehicleConnection<a>
-                    </li>
-                </ul>
-        </li>
-        <li>
-            characterConnection( 
-                <ul>
-                    <li>after:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>first:
-                        <a href="int.html">Int</a>
-                    </li>
-                    <li>before:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>last:
-                        <a href="int.html">Int</a>
-                    </li>
-                    ): <a href="filmcharactersconnection.html">FilmCharactersConnection<a>
-                    </li>
-                </ul>
+                    ): <a href="filmspeciesconnection.html">FilmsSpeciesConnection<a></li>
         </li>
 
-        <li>
-            planetConnection( 
+        <li class="list-item">
+            <p>starshipConnection(</p>
                 <ul>
-                    <li>after:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>first:
-                        <a href="int.html">Int</a>
-                    </li>
-                    <li>before:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>last:
-                        <a href="int.html">Int</a>
-                    </li>
-                    ): <a href="filmplanetsconnection.html">FilmPlanetsConnection<a>
-                    </li>
+                    <li class="list-item">after: <a href="string.html">String</a></li>
+                    <li class="list-item">first: <a href="int.html">Int</a></li>
+                    <li class="list-item">before: <a href="string.html">String</a></li>
+                    <li class="list-item">last: <a href="int.html">Int</a></li>
                 </ul>
+                    ): <a href="filmstarshipsconnection.html">FilmStartshipsConnection<a></li>
         </li>
 
-        <li>
+        <li class="list-item">
+            <p>vehicleConnection(</p>
+                <ul>
+                    <li class="list-item">after: <a href="string.html">String</a></li>
+                    <li class="list-item">first: <a href="int.html">Int</a></li>
+                    <li class="list-item">before: <a href="string.html">String</a></li>
+                    <li class="list-item">last: <a href="int.html">Int</a></li>
+                </ul>
+                    ): <a href="filmvehiclesconnection.html">FilmVehicleConnection<a></li>
+        </li>
+
+        <li class="list-item">
+            <p>characterConnection(</p>
+                <ul>
+                    <li class="list-item">after: <a href="string.html">String</a></li>
+                    <li class="list-item">first: <a href="int.html">Int</a></li>
+                    <li class="list-item">before: <a href="string.html">String</a></li>
+                    <li class="list-item">last: <a href="int.html">Int</a></li>
+                </ul>
+                    ): <a href="filmcharactersconnection.html">FilmCharactersConnection<a></li>
+        </li>
+
+        <li class="list-item">
+            <p>planetConnection(</p>
+                <ul>
+                    <li class="list-item">after: <a href="string.html">String</a></li>
+                    <li class="list-item">first: <a href="int.html">Int</a></li>
+                    <li class="list-item">before: <a href="string.html">String</a></li>
+                    <li class="list-item">last: <a href="int.html">Int</a></li>
+                </ul>
+                    ): <a href="filmplanetsconnection.html">FilmPlanetsConnection<a></li>
+        </li>
+
+        <li class="list-item">
             created: <a href="string.html">String</a>
             <p>The ISO 8601 date format of the time that this resource was created.</p>
         </li>
-        <li>
+
+        <li class="list-item">
             edited: <a href="string.html">String</a>
             <p>The ISO 8601 date format of the time that this resource was edited.</p>
         </li>
-        <li>
-            id: <a href="id!.html">ID</a>!
+
+        <li class="list-item">
+            id: <a href="id.html">ID</a>!
             <p>The ID of an object</p>
         </li>
     </ul>
