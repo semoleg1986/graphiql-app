@@ -11,6 +11,15 @@ const GraphiQL = () => {
   const [schema, setSchema] = useState<GraphQLSchema | null>(null); // Update the type to `any`
   const [query, setQuery] = useState('');
   const [result, setResult] = useState('');
+  const [showDocs, setShowDocs] = useState(false);
+
+  const handleClick = () => {
+    setShowDocs(true);
+  };
+
+  const handleClose = () => {
+    setShowDocs(false);
+  };
 
   useEffect(() => {
     const fetchSchema = async () => {
@@ -59,6 +68,20 @@ const GraphiQL = () => {
 
   return (
     <div className="query-container">
+      {showDocs ? (
+        <div>
+          <button onClick={handleClose}>x</button>
+          <iframe
+            style={{ width: '100%', height: '600px' }}
+            src="/docs/index.html"
+            title="GraphQL documentation"
+          ></iframe>
+        </div>
+      ) : (
+        <button className="docs-button" onClick={handleClick}>
+          Docs
+        </button>
+      )}
       <CodeMirror
         className="query-editor"
         value={query}

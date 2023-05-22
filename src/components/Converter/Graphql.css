@@ -25,7 +25,8 @@
     margin: 5px;
 }
 
-.run-button {
+.run-button,
+.docs-button {
     height: 40px; 
     background-color: #ffcccc;
     padding: 10px;
