@@ -31,36 +31,63 @@
         }
         </script>
     </p>
-    <h2>Film</h2>
-    <p>A single film.</p>
+    <h2>Person</h2>
+    <p>An individual person or character within the Star Wars universe.</p>
     <p>Fields</p>
     <ul>
         <li>
-            title: <a href="string.html">String</a>
-            <p>The title of this film.</p>
+            name: <a href="string.html">String</a>
+            <p>The name of this person.</p>
         </li>
+
         <li>
-            episodeID: <a href="int.html">Int</a>
-            <p>The episode number of this film.</p>
+            birthYear: <a href="string.html">String</a>
+            <p>The birth year of the person, using the in-universe standard of BBY or ABY -
+                Before the Battle of Yavin or After the Battle of Yavin. The Battle of Yavin is
+                a battle that occurs at the end of Star Wars episode IV: A New Hope.</p>
         </li>
+
         <li>
-            openingCrawl: <a href="string.html">String</a>
-            <p>The opening paragraphs at the beginning of this film.</p>
+            eyeColors: <a href="string.html">String</a>
+            <p>The eye color of this person. Will be "unknown" if not known or "n/a" if the
+                person does not have an eye.</p>
         </li>
+
+
         <li>
-           director: <a href="string.html">String</a>
-            <p>The name of the director of this film.</p>
+            gender: <a href="string.html">String</a>
+            <p>TThe gender of this person. Either "Male", "Female" or "unknown",
+                "n/a" if the person does not have a gender.</p>
         </li>
+
         <li>
-            producers: <a href="string.html">[String]</a>
-            <p>The name(s) of the producer(s) of this film.</p>
+            hairColor: <a href="string.html">String</a>
+            <p>The average height of this species in centimeters.</p>
         </li>
+
         <li>
-            releaseDate: <a href="string.html">String</a>
-            <p>The ISO 8601 date format of film release at original creator country.</p>
+            height: <a href="int.html">Int</a>
+            <p>The height of the person in centimeters.</p>
         </li>
+
+
         <li>
-            speciesConnection( 
+            mass: <a href="float.html">Float</a>
+            <p>The mass of the person in kilograms.</p>
+        </li>
+
+        <li>
+            skinColors: <a href="string.html">String</a>
+            <p>The skin color of this person.</p>
+        </li>
+
+        <li>
+            homeworld: <a href="planet.html">Planet</a>
+            <p>A planet that this person was born on or inhabits.</p>
+        </li>
+
+        <li>
+            filmConnection( 
                 <ul>
                     <li>after:
                         <a href="string.html">String</a>
@@ -74,10 +101,16 @@
                     <li>last:
                         <a href="int.html">Int</a>
                     </li>
-                    ): <a href="filmspeciesconnection.html">FilmsSpeciesConnection<a>
+                    ):<a href="personfilmsconnection.html">PersonFilmsConnection<a>
                     </li>
                 </ul>
         </li>
+
+        <li>
+            species</a>: <a href="species.html">Species</a>
+            <p>The species that this person belongs to, or null if unknown.</p>
+        </li>
+
         <li>
             starshipConnection( 
                 <ul>
@@ -93,11 +126,11 @@
                     <li>last:
                         <a href="int.html">Int</a>
                     </li>
-                    ): <a href="filmstarshipsconnection.html">FilmStartshipsConnection<a>
+                    ):<a href="personstarshipsconnection.html">PersonStarshipsConnection<a>
                     </li>
-                    <span></span>
                 </ul>
         </li>
+
         <li>
             vehicleConnection( 
                 <ul>
@@ -113,50 +146,11 @@
                     <li>last:
                         <a href="int.html">Int</a>
                     </li>
-                    ): <a href="filmvehiclesconnection.html">FilmVehicleConnection<a>
+                    ):<a href="personvehiclesconnection.html">PersonVehiclesConnection<a>
                     </li>
                 </ul>
         </li>
-        <li>
-            characterConnection( 
-                <ul>
-                    <li>after:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>first:
-                        <a href="int.html">Int</a>
-                    </li>
-                    <li>before:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>last:
-                        <a href="int.html">Int</a>
-                    </li>
-                    ): <a href="filmcharactersconnection.html">FilmCharactersConnection<a>
-                    </li>
-                </ul>
-        </li>
-
-        <li>
-            planetConnection( 
-                <ul>
-                    <li>after:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>first:
-                        <a href="int.html">Int</a>
-                    </li>
-                    <li>before:
-                        <a href="string.html">String</a>
-                    </li>
-                    <li>last:
-                        <a href="int.html">Int</a>
-                    </li>
-                    ): <a href="filmplanetsconnection.html">FilmPlanetsConnection<a>
-                    </li>
-                </ul>
-        </li>
-
+        <span></span>
         <li>
             created: <a href="string.html">String</a>
             <p>The ISO 8601 date format of the time that this resource was created.</p>
@@ -166,10 +160,10 @@
             <p>The ISO 8601 date format of the time that this resource was edited.</p>
         </li>
         <li>
-            id: <a href="id!.html">ID</a>!
+        id: <a href="id.html">ID</a>!
             <p>The ID of an object</p>
         </li>
     </ul>
-
+,
 </body>
 </html>

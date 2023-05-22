@@ -5,6 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            color: gray;
+            font-family: Roboto, Arial, sans-serif;
+        }
+
+        a {
+            color: orange;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: darkblue;
+        }
+    </style>
 </head>
 <body>
     <p>
@@ -15,12 +31,29 @@
         }
         </script>
     </p>
-    <h2>pageInfo</h2>
-    <p>Information to aid in pagination.</p>
-    <p>Type</p>
-    <p>
-        <a href="pageinfo!.html">PageInfo</a>!
-    </p>
-    
+    <h2>PageInfo</h2>
+    <p>Information about pagination in a connection.</p>
+    <p>Fields</p>
+    <ul>
+        <li>
+            hasNextPage: <a href="boolean.html">Boolean</a>!
+            <p>When paginating forwards, are there more items?</p>
+        </li>
+
+        <li>
+            hasPreviousPage: <a href="boolean.html">Boolean</a>!
+            <p>TWhen paginating backwards, are there more items?</p>
+        </li>
+
+        <li>
+            startCursor: <a href="string.html">String</a>
+            <p>When paginating backwards, the cursor to continue.</p>
+        </li>
+
+        <li>
+            endCursor: <a href="string.html">String</a>
+            <p>When paginating forwards, the cursor to continue.</p>
+        </li>
+        </ul>
 </body>
 </html>
