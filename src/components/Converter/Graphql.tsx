@@ -101,7 +101,7 @@ const GraphiQL = () => {
             <button onClick={handleClose}>x</button>
             <iframe
               style={{ width: '100%', height: '600px' }}
-              src="/doc/index.html"
+              src="/public/doc/index.html"
               title="GraphQL documentation"
             ></iframe>
           </div>
