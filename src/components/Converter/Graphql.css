@@ -1,11 +1,10 @@
 .query-container {
     display: flex;
     flex-direction: row;
+    border: 1px solid rgb(144, 142, 142);
     border-radius: 4px;
     font-size: 14px;
     font-family: 'Source Code Pro', monospace;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
   }
   
   .column {
@@ -42,16 +41,13 @@
   .run-button,
   .docs-button {
     height: 40px;
-    background-color: rgb(189, 189, 188);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 12px;
-    border: none;
+    background-color: #81c784;;
+    padding: 10px;
+    border: 1px solid #81c784;;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     margin: 5px;
-    font-family: 'Source Code Pro', monospace;
-
   }
   
   .query-editor,
@@ -79,19 +75,10 @@
   .control-button {
     display: inline-flex;
     height: 20px;
-    padding: 2px;
+    padding: 5px;
     margin: 2px;
     border: none;
     background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
-    font-family: 'Source Code Pro', monospace;
-  }
-
-  .collapse-button.active,
-  .control-button.active {
-    color: rgb(0, 0, 0);
-    background-color: rgb(189, 189, 188);
   }
 
 .editor-container.collapsed .variable-editor,
