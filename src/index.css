@@ -1,4 +1,4 @@
-.light-theme {
+/* .light-theme {
     background-color: white;
     height: 100vh;
     color: #333333;
@@ -8,7 +8,7 @@
     background-color: #333333;
     height: 100vh;
     color: white;
-}
+} */
 
 
 * {
@@ -111,6 +111,14 @@ a:hover {
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
+  }
+
+  .welcome-page h3 {
+    margin: 30px;
+  }
+
+  .welcome-page p {
+    margin: 30px;
   }
 
   .footer {

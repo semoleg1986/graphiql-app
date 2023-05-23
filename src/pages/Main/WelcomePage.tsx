@@ -8,9 +8,9 @@ const WelcomePage = () => {
   const { isAuth } = useAuth();
 
   return (
-    <div>
+    <div className="welcome-page">
       <h1>{i18next.t('welcome')}</h1>
-      <p>{i18next.t('welcome_text1')}</p>
+      <h3>{i18next.t('welcome_text1')}</h3>
       <p>{i18next.t('welcome_text2')}</p>
       {isAuth ? (
         <div className="button-container">
