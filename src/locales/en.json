@@ -27,6 +27,6 @@
     "invalid_email": "Invalid email format",
     "password_required": "Password is required",
     "password_message": "Password must be at least 8 characters long",
-    "password_contain":"Password must contain at least one ABC, one 123, and one &^%$#"
-
+    "password_contain":"Password must contain at least one ABC, one 123, and one &^%$#",
+    "backtopage": "Back to page"
 }

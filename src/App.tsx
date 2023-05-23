@@ -56,6 +56,7 @@ const App = () => {
         <Routes>
           <Route path="*" element={<Layout2 />}>
             <Route index element={<WelcomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
           {isAuth ? (
             <>
@@ -78,8 +79,6 @@ const App = () => {
               </Route>
             </>
           )}
-
-          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
     </I18nextProvider>
