@@ -30,6 +30,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'SF Distant Galaxy', sans-serif;
 }
 .error {
   color: red;
