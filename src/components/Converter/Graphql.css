@@ -75,11 +75,10 @@
   .control-button {
     display: inline-flex;
     height: 20px;
-    background-color: #ffcccc;
     padding: 5px;
-    border: 1px solid #ff0000;
-    border-radius: 5px;
     margin: 2px;
+    border: none;
+    background-color: white;
   }
 
 .editor-container.collapsed .variable-editor,
