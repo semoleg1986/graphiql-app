@@ -13,6 +13,8 @@ const endpoint = 'https://swapi-graphql.netlify.app/.netlify/functions/index';
 const GraphiQL = () => {
   const [schema, setSchema] = useState<GraphQLSchema | null>(null);
   const [showDocs, setShowDocs] = useState(false);
+  const [activeEditor, setActiveEditor] = useState('variables');
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const dispatch = useDispatch();
   const variables = useSelector((state: RootState) => state.graphiql.variables);
@@ -83,6 +85,10 @@ const GraphiQL = () => {
     }
   };
 
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
   if (!schema) {
     return <div>Loading...</div>;
   }
@@ -106,33 +112,54 @@ const GraphiQL = () => {
         )}
       </div>
       <div className="column">
-        <CodeMirror
-          className="query-editor"
-          value={query}
-          height="500px"
-          width="100%"
-          extensions={[graphql(schema)]}
-          onChange={onChangeValue}
-        />
-        <button className="run-button" onClick={executeQuery}>
-          Run
-        </button>
-        <h3>Variables</h3>
-        <CodeMirror
-          className="variable-editor"
-          value={variables}
-          height="100px"
-          width="100%"
-          onChange={onChangeVariables}
-        />
-        <h3>Headers</h3>
-        <CodeMirror
-          className="headers-editor"
-          value={headers}
-          height="100px"
-          width="100%"
-          onChange={onChangeHeaders}
-        />
+        <div className={`editor-container ${isCollapsed ? 'collapsed' : ''}`}>
+          <CodeMirror
+            className="query-editor"
+            value={query}
+            height="500px"
+            width="100%"
+            extensions={[graphql(schema)]}
+            onChange={onChangeValue}
+          />
+          <button className="run-button" onClick={executeQuery}>
+            Run
+          </button>
+          <div className="editor-controls">
+            <button
+              className={`control-button ${activeEditor === 'variables' ? 'active' : ''}`}
+              onClick={() => setActiveEditor('variables')}
+            >
+              Variables
+            </button>
+            <button
+              className={`control-button ${activeEditor === 'headers' ? 'active' : ''}`}
+              onClick={() => setActiveEditor('headers')}
+            >
+              Headers
+            </button>
+            <button className="collapse-button" onClick={toggleCollapse}>
+              {isCollapsed ? <>&#x25BC;</> : <>&#x25B2;</>}
+            </button>
+          </div>
+          {activeEditor === 'variables' && (
+            <CodeMirror
+              className="variable-editor"
+              value={variables}
+              height="100px"
+              width="100%"
+              onChange={onChangeVariables}
+            />
+          )}
+          {activeEditor === 'headers' && (
+            <CodeMirror
+              className="headers-editor"
+              value={headers}
+              height="100px"
+              width="100%"
+              onChange={onChangeHeaders}
+            />
+          )}
+        </div>
       </div>
       <div className="column">
         <CodeMirror className="response-field" value={result} height="500px" width="100%" />
