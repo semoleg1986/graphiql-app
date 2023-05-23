@@ -41,13 +41,18 @@
   .run-button,
   .docs-button {
     height: 40px;
-    background-color: #81c784;;
+    background-color: #81c784;
     padding: 10px;
-    border: 1px solid #81c784;;
+    border: 1px solid #81c784;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     margin: 5px;
+  }
+  .run-button:hover,
+  .docs-button:hover {
+    cursor: pointer;
+    background-color:#99c334;
   }
   
   .query-editor,
@@ -80,7 +85,11 @@
     border: none;
     background-color: white;
   }
-
+  .collapse-button:hover,
+  .control-button:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
 .editor-container.collapsed .variable-editor,
 .editor-container.collapsed .headers-editor {
   display: none;
