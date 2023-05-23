@@ -32,11 +32,8 @@ i18next.use(browserLanguageDetector).init({
 
 const App = () => {
   const { isAuth, isLoading } = useAuth();
-  const [darkTheme, setDarkTheme] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
-  const toggleTheme = () => {
-    setDarkTheme((prevTheme) => !prevTheme);
-  };
+
   useEffect(() => {
     setCurrentLanguage(i18next.language);
   }, []);
@@ -50,7 +47,13 @@ const App = () => {
   }
   return (
     <I18nextProvider i18n={i18next}>
-      <div className={darkTheme ? 'dark-theme' : 'light-theme'}>
+      <div>
+        <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
+          EN
+        </button>
+        <button onClick={() => handleLanguageChange('ru')} disabled={currentLanguage === 'ru'}>
+          RU
+        </button>
         <Routes>
           <Route path="*" element={<Layout2 />}>
             <Route index element={<WelcomePage />} />
@@ -79,13 +82,6 @@ const App = () => {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <Toggle initialTheme={false} onChange={toggleTheme} />
-        <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
-          EN
-        </button>
-        <button onClick={() => handleLanguageChange('ru')} disabled={currentLanguage === 'ru'}>
-          RU
-        </button>
       </div>
     </I18nextProvider>
   );
