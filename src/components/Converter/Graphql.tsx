@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { buildClientSchema, getIntrospectionQuery } from 'graphql';
 import CodeMirror from '@uiw/react-codemirror';
 import { GraphQLSchema } from 'graphql/type';
 import { graphql } from 'cm6-graphql';
 import './Graphql.css';
+import { setVariables, setHeaders, setQuery, setResponce } from '../../store/slices/graphiqlSlice';
+import { RootState } from '../../store';
 
 const endpoint = 'https://swapi-graphql.netlify.app/.netlify/functions/index';
 
 const GraphiQL = () => {
-  const [schema, setSchema] = useState<GraphQLSchema | null>(null); // Update the type to `any`
-  const [query, setQuery] = useState('');
-  const [result, setResult] = useState('');
+  const [schema, setSchema] = useState<GraphQLSchema | null>(null);
   const [showDocs, setShowDocs] = useState(false);
-  const [variables, setVariables] = useState('{}');
-  const [headers, setHeaders] = useState('');
+
+  const dispatch = useDispatch();
+  const variables = useSelector((state: RootState) => state.graphiql.variables);
+  const headers = useSelector((state: RootState) => state.graphiql.headers);
+  const query = useSelector((state: RootState) => state.graphiql.query);
+  const result = useSelector((state: RootState) => state.graphiql.responce);
 
   const handleClick = () => {
     setShowDocs(true);
@@ -22,13 +27,17 @@ const GraphiQL = () => {
   const handleClose = () => {
     setShowDocs(false);
   };
-  const onChangeVariables = React.useCallback((value: string) => {
-    setVariables(value);
-  }, []);
+  const onChangeVariables = (value: string) => {
+    dispatch(setVariables(value));
+  };
 
-  const onChangeHeaders = React.useCallback((value: string) => {
-    setHeaders(value);
-  }, []);
+  const onChangeHeaders = (value: string) => {
+    dispatch(setHeaders(value));
+  };
+
+  const onChangeValue = (value: string) => {
+    dispatch(setQuery(value));
+  };
 
   useEffect(() => {
     const fetchSchema = async () => {
@@ -52,25 +61,23 @@ const GraphiQL = () => {
 
     fetchSchema();
   }, []);
-  const onChangeValue = React.useCallback((value: string) => {
-    setQuery(value);
-  }, []);
+
   const executeQuery = async () => {
     try {
-      const variablesObj = variables ? JSON.parse(variables) : {}; // Преобразование переменных в объект JSON
-      const headersObj = headers ? JSON.parse(headers) : {}; // Преобразование заголовков в объект JSON
+      const variablesObj = variables ? JSON.parse(variables) : {};
+      const headersObj = headers ? JSON.parse(headers) : {};
 
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...headersObj, // Применение заголовков
+          ...headersObj,
         },
-        body: JSON.stringify({ query, variables: variablesObj }), // Применение переменных
+        body: JSON.stringify({ query, variables: variablesObj }),
       });
 
       const result = await response.json();
-      setResult(JSON.stringify(result, null, 2));
+      dispatch(setResponce(JSON.stringify(result, null, 2)));
     } catch (err) {
       console.error(err);
     }
