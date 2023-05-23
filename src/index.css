@@ -43,6 +43,13 @@ header a{
     color: white;
 }
 
+.yoda-1>img{
+  width: 300px;
+}
+img {
+  width: 200px;
+}
+
 .container {
     padding: 20px;
 }

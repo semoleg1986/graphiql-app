@@ -56,7 +56,10 @@
   .run-button:hover,
   .docs-button:hover {
     cursor: pointer;
-    background-color:#99c334;
+    background-color:#ff9999;
+    border: 1px solid #ff9999;
+    color: white;
+    
   }
   
   .query-editor,
