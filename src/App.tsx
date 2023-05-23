@@ -13,7 +13,6 @@ import { I18nextProvider } from 'react-i18next';
 import browserLanguageDetector from 'i18next-browser-languagedetector';
 import translationEn from '../src/locales/en.json';
 import translationRu from '../src/locales/ru.json';
-import Toggle from './components/Toggle/Toggle';
 import WelcomePage from './pages/Main/WelcomePage';
 import { useAuth } from './hooks/use-auth';
 import Layout2 from './components/Layout2';
