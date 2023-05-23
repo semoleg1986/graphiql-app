@@ -39,8 +39,6 @@ const GraphiQL = () => {
           body: JSON.stringify({ query: getIntrospectionQuery() }),
         });
         const result = await response.json();
-        console.log(result);
-
         if (result.errors) {
           throw new Error(result.errors[0].message);
         }
