@@ -10,15 +10,6 @@ const Header = () => {
   const navigate = useNavigate();
   const { isAuth } = useAuth();
   const auth = getAuth(); // Получение объекта аутентификации
-  const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
-
-  useEffect(() => {
-    setCurrentLanguage(i18next.language);
-  }, []);
-  const handleLanguageChange = (lang: string) => {
-    i18next.changeLanguage(lang);
-    setCurrentLanguage(lang);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,12 +37,6 @@ const Header = () => {
 
   return (
     <header className={isSticky ? 'sticky' : ''}>
-      <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
-        EN
-      </button>
-      <button onClick={() => handleLanguageChange('ru')} disabled={currentLanguage === 'ru'}>
-        RU
-      </button>
       <h1>
         <Routes>
           <Route path="/main" element={i18next.t('main')} />
