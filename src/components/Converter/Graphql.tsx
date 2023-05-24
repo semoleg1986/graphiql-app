@@ -105,7 +105,7 @@ const GraphiQL = () => {
       <div className="column">
         {showDocs ? (
           <div>
-            <button onClick={handleClose}>x</button>
+            <button onClick={handleClose}>&#x00D7;</button>
             <iframe
               style={{ width: '100%', height: '600px' }}
               src="/doc/docs.html"
