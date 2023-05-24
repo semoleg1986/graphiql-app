@@ -42,6 +42,11 @@ header {
     z-index: 999;
   }
 
+  header.sticky {
+    background-color: #aba9a9;
+    height: 20px;
+  }
+
 .active {
     color: cornflowerblue;
 }

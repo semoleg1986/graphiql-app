@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/use-auth';
@@ -6,9 +6,23 @@ import { NavLink } from 'react-router-dom';
 import i18next from 'i18next';
 
 const Header = () => {
+  const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
   const { isAuth } = useAuth();
   const auth = getAuth(); // Получение объекта аутентификации
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolling = window.scrollY > 0;
+      setIsSticky(isScrolling);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -24,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className={isSticky ? 'sticky' : ''}>
       <h1>
         <Routes>
           <Route path="/main" element={i18next.t('main')} />
