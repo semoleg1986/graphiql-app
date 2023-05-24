@@ -5,10 +5,18 @@
 body {
     background-color: white;
     color: #333333;
-    /* font-family: 'Star Wars', sans-serif; */
-    font-family: 'SF Distant Galaxy', sans-serif;
     padding-bottom: 50px;
 }
+
+body .en {
+  font-family: 'SF Distant Galaxy', sans-serif;
+}
+
+body .ru {
+  font-family: 'Russo One', sans-serif;
+}
+
+
 body .warning-message {
     position: fixed;
     top: 0;

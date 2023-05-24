@@ -30,8 +30,18 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  /* font-family: 'SF Distant Galaxy', sans-serif; */
+}
+
+.en #button {
   font-family: 'SF Distant Galaxy', sans-serif;
 }
+
+.ru #button {
+  font-family: 'Russo One', sans-serif;
+}
+
+
 .error {
   color: red;
   font-size: 14px;

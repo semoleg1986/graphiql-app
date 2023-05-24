@@ -46,7 +46,7 @@ const App = () => {
   }
   return (
     <I18nextProvider i18n={i18next}>
-      <div>
+      <div className={currentLanguage === 'en' ? 'en' : 'ru'}>
         <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
           EN
         </button>
