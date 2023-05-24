@@ -104,4 +104,30 @@
   display: none;
 }
 
+@media (max-width: 600px) {
+  .query-container {
+    flex-direction: column;
+  }
   
+  .column {
+    margin: 0;
+  }
+  
+  .query-editor-section {
+    flex: initial;
+  }
+  
+  .variable-editor,
+  .headers-editor {
+    height: initial; 
+  }
+  
+  iframe {
+    height: 400px;
+  }
+  
+  .editor-container.collapsed .variable-editor,
+  .editor-container.collapsed .headers-editor {
+    display: block; 
+  }
+}
