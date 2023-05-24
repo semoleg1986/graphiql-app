@@ -1,9 +1,8 @@
-import { Outlet } from 'react-router-dom';
-import Footer from './Footer/Footer';
 import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import i18next from 'i18next';
 
-const Layout2 = () => {
+const Layout3 = () => {
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
   useEffect(() => {
     setCurrentLanguage(i18next.language);
@@ -12,7 +11,6 @@ const Layout2 = () => {
     i18next.changeLanguage(lang);
     setCurrentLanguage(lang);
   };
-
   return (
     <div className="wrapped">
       <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
@@ -24,9 +22,8 @@ const Layout2 = () => {
       <main className="container">
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 };
 
-export default Layout2;
+export default Layout3;
