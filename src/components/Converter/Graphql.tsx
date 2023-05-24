@@ -7,6 +7,8 @@ import { graphql } from 'cm6-graphql';
 import './Graphql.css';
 import { setVariables, setHeaders, setQuery, setResponce } from '../../store/slices/graphiqlSlice';
 import { RootState } from '../../store';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const endpoint = 'https://swapi-graphql.netlify.app/.netlify/functions/index';
 
@@ -57,7 +59,7 @@ const GraphiQL = () => {
         const builtSchema = buildClientSchema(result.data);
         setSchema(builtSchema);
       } catch (err) {
-        console.error(err);
+        // console.error(err);
       }
     };
 
@@ -79,9 +81,14 @@ const GraphiQL = () => {
       });
 
       const result = await response.json();
-      dispatch(setResponce(JSON.stringify(result, null, 2)));
+      if (response.ok) {
+        dispatch(setResponce(JSON.stringify(result, null, 2)));
+      } else {
+        throw new Error(result.errors[0].message);
+      }
     } catch (err) {
-      console.error(err);
+      const errorMessage = (err as Error).message;
+      toast.error(`Error: ${errorMessage}`);
     }
   };
 
@@ -164,6 +171,7 @@ const GraphiQL = () => {
       <div className="column">
         <CodeMirror className="response-field" value={result} height="500px" width="100%" />
       </div>
+      <ToastContainer />
     </div>
   );
 };
