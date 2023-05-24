@@ -14,7 +14,7 @@ const GraphiQL = () => {
   const [schema, setSchema] = useState<GraphQLSchema | null>(null);
   const [showDocs, setShowDocs] = useState(false);
   const [activeEditor, setActiveEditor] = useState('variables');
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const dispatch = useDispatch();
   const variables = useSelector((state: RootState) => state.graphiql.variables);
@@ -101,7 +101,7 @@ const GraphiQL = () => {
             <button onClick={handleClose}>x</button>
             <iframe
               style={{ width: '100%', height: '600px' }}
-              src="/public/doc/index.html"
+              src="/public/doc/docs.html"
               title="GraphQL documentation"
             ></iframe>
           </div>
