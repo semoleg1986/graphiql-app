@@ -16,6 +16,9 @@ body .ru {
   font-family: 'Russo One', sans-serif;
 }
 
+.about p {
+  margin: 15px;
+}
 
 body .warning-message {
     position: fixed;
