@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom';
-import Footer from './Footer/Footer';
 
 interface HeaderProps {
   handleLanguageChanged: (lang: string) => void;
@@ -13,7 +12,6 @@ const Layout2 = ({ handleLanguageChanged }: HeaderProps) => {
       <main className="container">
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 };

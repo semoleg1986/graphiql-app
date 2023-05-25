@@ -5,7 +5,11 @@ import { useAuth } from '../../hooks/use-auth';
 import { NavLink } from 'react-router-dom';
 import i18next from 'i18next';
 
-const Header = () => {
+interface HeaderProps {
+  handleLanguageChanged: (lang: string) => void;
+}
+
+const Header = ({ handleLanguageChanged }: HeaderProps) => {
   const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
   const { isAuth } = useAuth();
@@ -46,6 +50,8 @@ const Header = () => {
       </h1>
       <NavLink to="/main">{i18next.t('main')}</NavLink>
       <NavLink to="/about">{i18next.t('about')}</NavLink>
+      <button onClick={() => handleLanguageChanged('en')}>EN</button>
+      <button onClick={() => handleLanguageChanged('ru')}>RU</button>
       {isAuth && (
         <div>
           <button className="signout" onClick={handleSignOut}>
