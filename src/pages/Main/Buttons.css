@@ -26,11 +26,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
    }
 
-.en .signin, .signup, .gomainpage, .signout {
+.en .signin, .en .signup, .en .gomainpage, .en .signout {
        font-family: 'SF Distant Galaxy', sans-serif;
     }
 
-.ru .signin, .signup, .gomainpage, .signout {
+.ru .signin, .ru .signup, .ru .gomainpage, .ru .signout {
     font-family: 'Russo One', sans-serif;
      }
  
