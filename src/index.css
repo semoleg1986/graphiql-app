@@ -84,7 +84,7 @@ img {
   
 @media (max-width: 600px) {
   .auth {
-    width: 95%;
+    width: 100%;
   }
 }
 .auth h1 {
