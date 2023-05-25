@@ -66,9 +66,9 @@ const App = () => {
           ) : (
             <>
               <Route path="*" element={<Layout3 handleLanguageChanged={handleLanguageChanged} />}>
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="register" element={<RegisterPage />} />
+                <Route path="reset-password" element={<ResetPassword />} />
               </Route>
 
               <Route path="*" element={<Layout handleLanguageChanged={handleLanguageChanged} />}>
