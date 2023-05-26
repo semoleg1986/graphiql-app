@@ -104,18 +104,12 @@ const GraphiQL = () => {
     <div className="query-container">
       <div className="column">
         <Suspense fallback={<div>Lodaing Docs...</div>}>
-          {/* Loading не видно из-за iframe? */}
           {showDocs ? (
-            <DocsExplorer onClose={handleClose} />
+            <div>
+              <button onClick={handleClose}>&#x00D7;</button>
+              <DocsExplorer />
+            </div>
           ) : (
-            // <div>
-            //   <button onClick={handleClose}>&#x00D7;</button>
-            //   <iframe
-            //     style={{ width: '100%', height: '600px' }}
-            //     src="/doc/docs.html"
-            //     title="GraphQL documentation"
-            //   ></iframe>
-            // </div>
             <button className="docs-button" onClick={handleClick}>
               Docs
             </button>
