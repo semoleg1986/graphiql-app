@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { buildClientSchema, getIntrospectionQuery } from 'graphql';
 import CodeMirror from '@uiw/react-codemirror';
@@ -9,6 +9,8 @@ import { setVariables, setHeaders, setQuery, setResponce } from '../../store/sli
 import { RootState } from '../../store';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+const DocsExplorer = React.lazy(() => import('./DocsExplorer'));
 
 const endpoint = 'https://swapi-graphql.netlify.app/.netlify/functions/index';
 
@@ -58,9 +60,7 @@ const GraphiQL = () => {
 
         const builtSchema = buildClientSchema(result.data);
         setSchema(builtSchema);
-      } catch (err) {
-        // console.error(err);
-      }
+      } catch (err) {}
     };
 
     fetchSchema();
@@ -103,20 +103,24 @@ const GraphiQL = () => {
   return (
     <div className="query-container">
       <div className="column">
-        {showDocs ? (
-          <div>
-            <button onClick={handleClose}>&#x00D7;</button>
-            <iframe
-              style={{ width: '100%', height: '600px' }}
-              src="/doc/docs.html"
-              title="GraphQL documentation"
-            ></iframe>
-          </div>
-        ) : (
-          <button className="docs-button" onClick={handleClick}>
-            Docs
-          </button>
-        )}
+        <Suspense fallback={<div>Lodaing Docs...</div>}>
+          {/* Loading не видно из-за iframe? */}
+          {showDocs ? (
+            <DocsExplorer onClose={handleClose} />
+          ) : (
+            // <div>
+            //   <button onClick={handleClose}>&#x00D7;</button>
+            //   <iframe
+            //     style={{ width: '100%', height: '600px' }}
+            //     src="/doc/docs.html"
+            //     title="GraphQL documentation"
+            //   ></iframe>
+            // </div>
+            <button className="docs-button" onClick={handleClick}>
+              Docs
+            </button>
+          )}
+        </Suspense>
       </div>
       <div className="column">
         <div className={`editor-container ${isCollapsed ? 'collapsed' : ''}`}>
