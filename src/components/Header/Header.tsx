@@ -14,7 +14,7 @@ const Header = ({ handleLanguageChanged }: HeaderProps) => {
   const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
   const { isAuth } = useAuth();
-  const auth = getAuth(); // Получение объекта аутентификации
+  const auth = getAuth();
 
   useEffect(() => {
     const handleScroll = () => {
