@@ -10,6 +10,8 @@ const Footer = () => {
             <a href="https://github.com/semoleg1986">semoleg1986</a>
             <span> | </span>
             <a href="https://github.com/NickIvn">NickIvn</a>
+            <span> | </span>
+            <a href="https://github.com/Uladziby">Uladziby</a>
           </div>
           <div className="footer-logo">
             <a href="https://rs.school/react/">
