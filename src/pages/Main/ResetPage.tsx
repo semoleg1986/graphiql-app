@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { Link } from 'react-router-dom';
-import '../../components/Form.css';
+import '../../components/Auth/Form.css';
 import i18next from 'i18next';
 
 const ResetPassword = () => {

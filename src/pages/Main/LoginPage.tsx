@@ -1,4 +1,4 @@
-import { Login } from '../../components/Login';
+import { Login } from '../../components/Auth/Login';
 import { Link } from 'react-router-dom';
 import i18next from 'i18next';
 

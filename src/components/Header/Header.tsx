@@ -3,7 +3,7 @@ import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/use-auth';
 import { NavLink } from 'react-router-dom';
-import Toggle from '../Toggle';
+import Toggle from '../Toggle/Toggle';
 import i18next from 'i18next';
 import './Header.style.css';
 
