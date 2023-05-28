@@ -5,6 +5,8 @@ import { useAuth } from '../../hooks/use-auth';
 import { NavLink } from 'react-router-dom';
 import Toggle from '../Toggle';
 import i18next from 'i18next';
+import { ButtonContainer } from '../ButtonContainer/ButtonContainer';
+import { ABOUT_PAGE, MAIN_PAGE } from '../../utils/constants';
 
 interface HeaderProps {
   handleLanguageChanged: (lang: string) => void;
@@ -45,19 +47,22 @@ const Header = ({ handleLanguageChanged }: HeaderProps) => {
       <Toggle handleLanguageChanged={handleLanguageChanged} />
       <h1>
         <Routes>
-          <Route path="/main" element={i18next.t('main')} />
-          <Route path="/about" element={i18next.t('about')} />
-          <Route path="" element={i18next.t('notfound')} />
+          <Route path={MAIN_PAGE} element={i18next.t('main')} />
+          <Route path={ABOUT_PAGE} element={i18next.t('about')} />
         </Routes>
       </h1>
+      <NavLink to="/">{i18next.t('welcome_page')}</NavLink>
       <NavLink to="/main">{i18next.t('main')}</NavLink>
       <NavLink to="/about">{i18next.t('about')}</NavLink>
-      {isAuth && (
+
+      {isAuth ? (
         <div>
           <button className="signout" onClick={handleSignOut}>
             {i18next.t('signout')}
           </button>
         </div>
+      ) : (
+        <ButtonContainer />
       )}
     </header>
   );

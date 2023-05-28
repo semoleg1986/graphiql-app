@@ -1,40 +1,45 @@
 .button-container {
-    position: absolute;
-    top: 40px;
-    right: 20px;
-  }
-
-  .en .button-container {
-    font-family: 'SF Distant Galaxy', sans-serif;
-  }
-
-  .ru .button-container {
-    font-family: 'Russo One', sans-serif;
+  position: relative;
 }
 
+.en .button-container {
+  font-family: 'SF Distant Galaxy', sans-serif;
+}
 
- .signin, .signup, .gomainpage, .signout {
-    display: inline-block;
-    margin: 5px;
-    padding: 8px 16px;
-    border-radius: 7px;
-    min-width: 60px;
-    background-color: #81c784;
-    color: white;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-   }
+.ru .button-container {
+  font-family: 'Russo One', sans-serif;
+}
 
-.en .signin, .en .signup, .en .gomainpage, .en .signout {
-       font-family: 'SF Distant Galaxy', sans-serif;
-    }
+.signin,
+.signup,
+.gomainpage,
+.signout {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 7px;
+  min-width: 60px;
+  background-color: #81c784;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-.ru .signin, .ru .signup, .ru .gomainpage, .ru .signout {
-    font-family: 'Russo One', sans-serif;
-     }
- 
+.en .signin,
+.en .signup,
+.en .gomainpage,
+.en .signout {
+  font-family: 'SF Distant Galaxy', sans-serif;
+}
 
-    .button-container :hover {
-        transform:scale(1.05)
-    }
+.ru .signin,
+.ru .signup,
+.ru .gomainpage,
+.ru .signout {
+  font-family: 'Russo One', sans-serif;
+}
+
+.button-container :hover {
+  transform: scale(1.05);
+}
