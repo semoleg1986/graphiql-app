@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { getAuth, signOut } from 'firebase/auth';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/use-auth';
 import { NavLink } from 'react-router-dom';
 import Toggle from '../Toggle';
 import i18next from 'i18next';
+import './Header.style.css';
 
 interface HeaderProps {
   handleLanguageChanged: (lang: string) => void;
@@ -42,23 +43,18 @@ const Header = ({ handleLanguageChanged }: HeaderProps) => {
 
   return (
     <header className={isSticky ? 'sticky' : ''}>
-      <Toggle handleLanguageChanged={handleLanguageChanged} />
-      <h1>
-        <Routes>
-          <Route path="/main" element={i18next.t('main')} />
-          <Route path="/about" element={i18next.t('about')} />
-          <Route path="" element={i18next.t('notfound')} />
-        </Routes>
-      </h1>
       <NavLink to="/main">{i18next.t('main')}</NavLink>
       <NavLink to="/about">{i18next.t('about')}</NavLink>
-      {isAuth && (
-        <div>
-          <button className="signout" onClick={handleSignOut}>
-            {i18next.t('signout')}
-          </button>
-        </div>
-      )}
+      <div>
+        <Toggle handleLanguageChanged={handleLanguageChanged} />
+        {isAuth && (
+          <div className="btn">
+            <button className="signout" onClick={handleSignOut}>
+              {i18next.t('signout')}
+            </button>
+          </div>
+        )}
+      </div>
     </header>
   );
 };

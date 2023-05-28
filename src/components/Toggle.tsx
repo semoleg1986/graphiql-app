@@ -15,12 +15,9 @@ const Toggle = ({ handleLanguageChanged }: ToggleProps) => {
   };
 
   return (
-    <div className={`toggle-btn ${active ? 'active' : ''}`} onClick={handleClick}>
-      <div className="inner-circle">
-        {/* <span className="toggle-label">{!active ? 'ru' : 'en'}</span> */}
-      </div>
-      <h4>en ru</h4>
-    </div>
+    <button className={`lang ${active ? 'active' : ''}`} onClick={handleClick}>
+      <p className="toggle-label">{!active ? 'ru' : 'en'}</p>
+    </button>
   );
 };
 

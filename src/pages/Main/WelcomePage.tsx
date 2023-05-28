@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/use-auth';
 import './Buttons.css';
 import i18next from 'i18next';
+import './WelcomePage.style.css';
 
 const WelcomePage = () => {
   const { isAuth } = useAuth();
