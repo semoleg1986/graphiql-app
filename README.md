@@ -1,4 +1,4 @@
-#GraphiQL
+# GraphiQL
 
 <img width="1440" alt="Снимок экрана 2023-05-28 в 20 52 49" src="https://github.com/semoleg1986/graphiql-app/assets/66306538/260f1836-912c-4aaf-9f01-af8a9cace927">
  
@@ -12,7 +12,7 @@ To ensure a smooth user experience, the application includes localization suppor
 
 Link: https://develop--golden-clafoutis-688ad6.netlify.app/
 
-##Getting started
+## Getting started
 
 Clone repository:
 `git clone https://github.com/elquespera/graphiql-app.git`
