@@ -1,4 +1,4 @@
-GraphiQL
+#GraphiQL
 
 <img width="1440" alt="Снимок экрана 2023-05-28 в 20 52 49" src="https://github.com/semoleg1986/graphiql-app/assets/66306538/260f1836-912c-4aaf-9f01-af8a9cace927">
  
@@ -11,4 +11,17 @@ There is also a documentation explorer. It provides a way to navigate through th
 To ensure a smooth user experience, the application includes localization support in two languages, allowing users to switch languages seamlessly. The header of the application is sticky, providing easy access to essential navigation elements even during scrolling.
 
 Link: https://develop--golden-clafoutis-688ad6.netlify.app/
+
+##Getting started
+
+Clone repository:
+`git clone https://github.com/elquespera/graphiql-app.git`
+
+Install the dependencies:
+`npm install`
+
+Start the development server:
+`npm run dev`
+
+
 
