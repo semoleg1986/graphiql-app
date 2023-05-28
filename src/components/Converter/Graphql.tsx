@@ -5,7 +5,13 @@ import CodeMirror from '@uiw/react-codemirror';
 import { GraphQLSchema } from 'graphql/type';
 import { graphql } from 'cm6-graphql';
 import './Graphql.css';
-import { setVariables, setHeaders, setQuery, setResponce } from '../../store/slices/graphiqlSlice';
+import {
+  setVariables,
+  setHeaders,
+  setQuery,
+  setResponce,
+  setDocsButtonActive,
+} from '../../store/slices/graphiqlSlice';
 import { RootState } from '../../store';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,13 +25,14 @@ const GraphiQL = () => {
   const [showDocs, setShowDocs] = useState(false);
   const [activeEditor, setActiveEditor] = useState('variables');
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [isDocsButtonActive, setIsDocsButtonActive] = useState(false);
+  // const [isDocsButtonActive, setIsDocsButtonActive] = useState(false);
 
   const dispatch = useDispatch();
   const variables = useSelector((state: RootState) => state.graphiql.variables);
   const headers = useSelector((state: RootState) => state.graphiql.headers);
   const query = useSelector((state: RootState) => state.graphiql.query);
   const result = useSelector((state: RootState) => state.graphiql.responce);
+  const isDocsButtonActive = useSelector((state: RootState) => state.graphiql.isDocsButtonActive);
 
   const handleClick = () => {
     setShowDocs(true);
@@ -85,7 +92,7 @@ const GraphiQL = () => {
       if (response.ok) {
         dispatch(setResponce(JSON.stringify(result, null, 2)));
         if (!isDocsButtonActive) {
-          setIsDocsButtonActive(true);
+          dispatch(setDocsButtonActive(true));
         }
       } else {
         throw new Error(result.errors[0].message);

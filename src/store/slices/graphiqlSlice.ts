@@ -5,6 +5,7 @@ interface GraphiQLState {
   headers: string;
   query: string;
   responce: string;
+  isDocsButtonActive: boolean;
 }
 
 const initialState: GraphiQLState = {
@@ -12,6 +13,7 @@ const initialState: GraphiQLState = {
   headers: '',
   query: '',
   responce: '',
+  isDocsButtonActive: false,
 };
 
 const graphiqlSlice = createSlice({
@@ -30,8 +32,12 @@ const graphiqlSlice = createSlice({
     setResponce: (state, action: PayloadAction<string>) => {
       state.responce = action.payload;
     },
+    setDocsButtonActive: (state, action: PayloadAction<boolean>) => {
+      state.isDocsButtonActive = action.payload;
+    },
   },
 });
 
-export const { setVariables, setHeaders, setQuery, setResponce } = graphiqlSlice.actions;
+export const { setVariables, setHeaders, setQuery, setResponce, setDocsButtonActive } =
+  graphiqlSlice.actions;
 export default graphiqlSlice.reducer;
