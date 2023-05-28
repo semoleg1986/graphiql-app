@@ -33,12 +33,9 @@ const Header = ({ handleLanguageChanged }: HeaderProps) => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log('Выход из системы выполнен');
         navigate('/');
       })
-      .catch((error) => {
-        console.error('Ошибка при выходе из системы:', error);
-      });
+      .catch(() => {});
   };
 
   return (

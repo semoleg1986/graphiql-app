@@ -25,7 +25,6 @@ const GraphiQL = () => {
   const [showDocs, setShowDocs] = useState(false);
   const [activeEditor, setActiveEditor] = useState('variables');
   const [isCollapsed, setIsCollapsed] = useState(true);
-  // const [isDocsButtonActive, setIsDocsButtonActive] = useState(false);
 
   const dispatch = useDispatch();
   const variables = useSelector((state: RootState) => state.graphiql.variables);

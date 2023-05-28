@@ -28,7 +28,7 @@ const App = () => {
     setCurrentLanguage(lang);
   };
   if (isLoading) {
-    return <div>Loading...</div>; // Отображение загрузочного индикатора или другой загрузочной составляющей
+    return <div>Loading...</div>;
   }
   return (
     <I18nextProvider i18n={i18next}>
