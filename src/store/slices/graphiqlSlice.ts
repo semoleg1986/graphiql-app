@@ -11,7 +11,7 @@ interface GraphiQLState {
 const initialState: GraphiQLState = {
   variables: '{}',
   headers: '',
-  query: '',
+  query: 'query{allPlanets{planets{name}}}',
   responce: '',
   isDocsButtonActive: false,
 };
