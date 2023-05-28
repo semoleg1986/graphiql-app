@@ -1,0 +1,36 @@
+.warning-message {
+    background-color: #ffcccc;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .warning-message p {
+    margin: 0;
+  }
+  
+  .warning-message button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .welcome-page h3 {
+    margin: 30px;
+  }
+
+  .welcome-page p {
+    margin: 30px;
+  }
+
+  @media (max-width: 480px) {
+    .welcome-page {
+      margin-top: 30px;
+    }
+  }

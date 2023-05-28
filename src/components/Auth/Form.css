@@ -1,0 +1,49 @@
+#fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.email,
+.password {
+  padding: 10px;
+  margin-bottom: 22px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.email:focus,
+.password:focus {
+  outline: none;
+  border: 3px solid;
+  border-color: #c8e6c9;
+}
+
+#button {
+  width: 320px;
+  padding: 10px 20px;
+  background-color: #81c784;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.en #button {
+  font-family: 'SF Distant Galaxy', sans-serif;
+}
+
+.ru #button {
+  font-family: 'Russo One', sans-serif;
+}
+
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -20px;
+  padding-bottom: 2px;
+}

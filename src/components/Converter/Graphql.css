@@ -1,0 +1,133 @@
+.query-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(144, 142, 142);
+    border-radius: 4px;
+    font-size: 14px;
+    /* font-family: 'Source Code Pro', monospace; */
+    font-family: 'Star Wars', sans-serif;
+
+  }
+  
+  .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+  
+  .docs-section {
+    padding: 10px;
+  }
+  
+  .query-editor-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .variables-section,
+  .headers-section {
+    margin-top: 10px;
+  }
+  
+  .variables-section h3,
+  .headers-section h3 {
+    margin: 5px 0;
+  }
+  
+  .response-field {
+    margin: 5px;
+  }
+  
+  .run-button,
+  .docs-button {
+    height: 40px;
+    background-color: #81c784;
+    padding: 12px;
+    border: 1px solid #81c784;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    font-family: 'Star Wars', sans-serif;
+
+  }
+  .run-button:hover,
+  .docs-button:hover {
+    cursor: pointer;
+    background-color:#ff9999;
+    border: 1px solid #ff9999;
+    color: white;
+    
+  }
+  
+  .query-editor,
+  .variable-editor,
+  .headers-editor {
+    width: 100%;
+    margin: 5px;
+  }
+  
+  .query-editor {
+    flex: 1;
+  }
+  
+  .variable-editor,
+  .headers-editor {
+    height: 100px;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 600px;
+  }
+
+  .collapse-button,
+  .control-button {
+    display: inline-flex;
+    height: 20px;
+    padding: 5px;
+    margin: 2px;
+    border: none;
+    background-color: white;
+    font-family: 'Star Wars', sans-serif;
+
+  }
+  .collapse-button:hover,
+  .control-button:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+.editor-container.collapsed .variable-editor,
+.editor-container.collapsed .headers-editor {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .query-container {
+    flex-direction: column;
+  }
+  
+  .column {
+    margin: 0;
+  }
+  
+  .query-editor-section {
+    flex: initial;
+  }
+  
+  .variable-editor,
+  .headers-editor {
+    height: initial; 
+  }
+  
+  iframe {
+    height: 400px;
+  }
+  
+  .editor-container.collapsed .variable-editor,
+  .editor-container.collapsed .headers-editor {
+    display: block; 
+  }
+}
