@@ -12,23 +12,8 @@ import Layout3 from './components/Layout3';
 import i18next from 'i18next';
 import { useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
-import browserLanguageDetector from 'i18next-browser-languagedetector';
-import translationEn from '../src/locales/en.json';
-import translationRu from '../src/locales/ru.json';
 import WelcomePage from './pages/Main/WelcomePage';
 import { useAuth } from './hooks/use-auth';
-
-i18next.use(browserLanguageDetector).init({
-  resources: {
-    en: {
-      translation: translationEn,
-    },
-    ru: {
-      translation: translationRu,
-    },
-  },
-  fallbackLng: 'en',
-});
 
 const App = () => {
   const { isAuth, isLoading } = useAuth();
