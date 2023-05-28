@@ -19,6 +19,7 @@ const GraphiQL = () => {
   const [showDocs, setShowDocs] = useState(false);
   const [activeEditor, setActiveEditor] = useState('variables');
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isDocsButtonActive, setIsDocsButtonActive] = useState(false);
 
   const dispatch = useDispatch();
   const variables = useSelector((state: RootState) => state.graphiql.variables);
@@ -83,6 +84,9 @@ const GraphiQL = () => {
       const result = await response.json();
       if (response.ok) {
         dispatch(setResponce(JSON.stringify(result, null, 2)));
+        if (!isDocsButtonActive) {
+          setIsDocsButtonActive(true);
+        }
       } else {
         throw new Error(result.errors[0].message);
       }
@@ -110,7 +114,7 @@ const GraphiQL = () => {
               <DocsExplorer />
             </div>
           ) : (
-            <button className="docs-button" onClick={handleClick}>
+            <button className="docs-button" onClick={handleClick} disabled={!isDocsButtonActive}>
               Docs
             </button>
           )}
