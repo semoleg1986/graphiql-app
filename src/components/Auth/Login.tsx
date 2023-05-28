@@ -8,18 +8,7 @@ import {
 } from 'firebase/auth';
 import { Form, FormProps } from './Form';
 import i18next from 'i18next';
-
-interface WarningMessageProps {
-  message: string;
-  onClose: () => void;
-}
-
-const WarningMessage: React.FC<WarningMessageProps> = ({ message, onClose }) => (
-  <div className="warning-message">
-    <p>{message}</p>
-    <button onClick={onClose}>X</button>
-  </div>
-);
+import WarningMessage from '../WarningMessage';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -31,8 +20,8 @@ const Login: React.FC = () => {
     setPersistence(auth, browserLocalPersistence)
       .then(() => {
         signInWithEmailAndPassword(auth, email, password)
-          .then(({ user }) => {
-            console.log(user);
+          .then(() => {
+            // console.log(user);
             navigate('/main');
           })
           .catch(() => {

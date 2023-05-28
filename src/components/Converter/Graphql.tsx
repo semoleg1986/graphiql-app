@@ -13,8 +13,8 @@ import {
   setDocsButtonActive,
 } from '../../store/slices/graphiqlSlice';
 import { RootState } from '../../store';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import WarningMessage from '../WarningMessage';
 
 const DocsExplorer = React.lazy(() => import('./DocsExplorer'));
 
@@ -25,6 +25,8 @@ const GraphiQL = () => {
   const [showDocs, setShowDocs] = useState(false);
   const [activeEditor, setActiveEditor] = useState('variables');
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningMessage, setWarningMessage] = useState('');
 
   const dispatch = useDispatch();
   const variables = useSelector((state: RootState) => state.graphiql.variables);
@@ -54,20 +56,18 @@ const GraphiQL = () => {
 
   useEffect(() => {
     const fetchSchema = async () => {
-      try {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query: getIntrospectionQuery() }),
-        });
-        const result = await response.json();
-        if (result.errors) {
-          throw new Error(result.errors[0].message);
-        }
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: getIntrospectionQuery() }),
+      });
+      const result = await response.json();
+      if (result.errors) {
+        throw new Error(result.errors[0].message);
+      }
 
-        const builtSchema = buildClientSchema(result.data);
-        setSchema(builtSchema);
-      } catch (err) {}
+      const builtSchema = buildClientSchema(result.data);
+      setSchema(builtSchema);
     };
 
     fetchSchema();
@@ -97,13 +97,18 @@ const GraphiQL = () => {
         throw new Error(result.errors[0].message);
       }
     } catch (err) {
-      const errorMessage = (err as Error).message;
-      toast.error(`Error: ${errorMessage}`);
+      setWarningMessage(`${err}`);
+      setShowWarning(true);
     }
   };
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
+  };
+
+  const closeWarning = () => {
+    setShowWarning(false);
+    setWarningMessage('');
   };
 
   if (!schema) {
@@ -112,6 +117,8 @@ const GraphiQL = () => {
 
   return (
     <div className="query-container">
+      {showWarning && <WarningMessage message={warningMessage} onClose={closeWarning} />}
+
       <div className="column">
         <Suspense fallback={<div>Lodaing Docs...</div>}>
           {showDocs ? (
@@ -179,7 +186,6 @@ const GraphiQL = () => {
       <div className="column">
         <CodeMirror className="response-field" value={result} height="500px" width="100%" />
       </div>
-      <ToastContainer />
     </div>
   );
 };
