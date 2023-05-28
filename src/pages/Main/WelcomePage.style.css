@@ -28,3 +28,9 @@
   .welcome-page p {
     margin: 30px;
   }
+
+  @media (max-width: 480px) {
+    .welcome-page {
+      margin-top: 30px;
+    }
+  }

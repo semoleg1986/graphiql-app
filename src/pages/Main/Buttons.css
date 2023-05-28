@@ -42,7 +42,7 @@
     @media (max-width: 480px) {
       .button-container {
         position: absolute;
-        top: 3px;
+        top: 2px;
         right: 20px;
       }
     }
