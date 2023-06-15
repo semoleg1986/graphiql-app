@@ -3,15 +3,10 @@ import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/use-auth';
 import { NavLink } from 'react-router-dom';
-import Toggle from '../Toggle/Toggle';
 import i18next from 'i18next';
 import './Header.style.css';
 
-interface HeaderProps {
-  handleLanguageChanged: (lang: string) => void;
-}
-
-const Header = ({ handleLanguageChanged }: HeaderProps) => {
+const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
   const { isAuth } = useAuth();
@@ -43,7 +38,6 @@ const Header = ({ handleLanguageChanged }: HeaderProps) => {
       <NavLink to="/main">{i18next.t('main')}</NavLink>
       <NavLink to="/about">{i18next.t('about')}</NavLink>
       <div>
-        <Toggle handleLanguageChanged={handleLanguageChanged} />
         {isAuth && (
           <div className="btn">
             <button className="signout" onClick={handleSignOut}>

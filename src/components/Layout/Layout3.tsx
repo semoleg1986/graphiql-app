@@ -1,14 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Toggle from '../Toggle/Toggle';
-
-interface HeaderProps {
-  handleLanguageChanged: (lang: string) => void;
-}
-
-const Layout2 = ({ handleLanguageChanged }: HeaderProps) => {
+const Layout2 = () => {
   return (
     <div className="wrapped">
-      <Toggle handleLanguageChanged={handleLanguageChanged} />
       <main className="container">
         <Outlet />
       </main>

@@ -7,7 +7,6 @@ import ResetPassword from './pages/Main/ResetPage';
 import About from './pages/About/AboutPage';
 import NotFoundPage from './pages/404/NotFoundPage';
 import Layout from './components/Layout/Layout';
-import Layout2 from './components/Layout/Layout2';
 import Layout3 from './components/Layout/Layout3';
 import i18next from 'i18next';
 import { useEffect, useState } from 'react';
@@ -23,7 +22,7 @@ const App = () => {
     setCurrentLanguage(i18next.language);
   }, []);
 
-  const handleLanguageChanged = (lang: string) => {
+  const handleLanguageChange = (lang: string) => {
     i18next.changeLanguage(lang);
     setCurrentLanguage(lang);
   };
@@ -33,30 +32,34 @@ const App = () => {
   return (
     <I18nextProvider i18n={i18next}>
       <div className={currentLanguage === 'en' ? 'en' : 'ru'}>
+        <button onClick={() => handleLanguageChange('en')} disabled={currentLanguage === 'en'}>
+          EN
+        </button>
+        <button onClick={() => handleLanguageChange('ru')} disabled={currentLanguage === 'ru'}>
+          RU
+        </button>
         <Routes>
-          <Route path="*" element={<Layout2 handleLanguageChanged={handleLanguageChanged} />}>
-            <Route index element={<WelcomePage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
+          <Route index element={<WelcomePage />} />
+          <Route path="*" element={<NotFoundPage />} />
           {isAuth ? (
             <>
               <Route path="/login" element={<Navigate to="/main" />} />
               <Route path="/register" element={<Navigate to="/main" />} />
               <Route path="/reset-password" element={<Navigate to="/main" />} />
-              <Route path="*" element={<Layout handleLanguageChanged={handleLanguageChanged} />}>
+              <Route path="*" element={<Layout />}>
                 <Route path="main" element={<Main />} />
                 <Route path="about" element={<About />} />
               </Route>
             </>
           ) : (
             <>
-              <Route path="*" element={<Layout3 handleLanguageChanged={handleLanguageChanged} />}>
+              <Route path="*" element={<Layout3 />}>
                 <Route path="login" element={<LoginPage />} />
                 <Route path="register" element={<RegisterPage />} />
                 <Route path="reset-password" element={<ResetPassword />} />
               </Route>
 
-              <Route path="*" element={<Layout handleLanguageChanged={handleLanguageChanged} />}>
+              <Route path="*" element={<Layout />}>
                 <Route path="main" element={<Navigate to="/" />} />
                 <Route path="about" element={<Navigate to="/" />} />
               </Route>

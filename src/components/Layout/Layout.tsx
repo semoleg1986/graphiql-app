@@ -2,14 +2,10 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-interface HeaderProps {
-  handleLanguageChanged: (lang: string) => void;
-}
-
-const Layout = ({ handleLanguageChanged }: HeaderProps) => {
+const Layout = () => {
   return (
     <div className="wrapped">
-      <Header handleLanguageChanged={handleLanguageChanged} />
+      <Header />
       <main className="container">
         <Outlet />
       </main>
