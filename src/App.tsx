@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import WelcomePage from './pages/Main/WelcomePage';
 import { useAuth } from './hooks/use-auth';
+import Layout2 from './components/Layout/Layout2';
 
 const App = () => {
   const { isAuth, isLoading } = useAuth();
@@ -39,8 +40,10 @@ const App = () => {
           RU
         </button>
         <Routes>
-          <Route index element={<WelcomePage />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<Layout2 />}>
+            <Route index element={<WelcomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
           {isAuth ? (
             <>
               <Route path="/login" element={<Navigate to="/main" />} />
